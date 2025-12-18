@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陶红希 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #1a6fb0;
+            --secondary-color: #2c8cd6;
+            --accent-color: #ff7e30;
+            --light-color: #f5f9fd;
+            --dark-color: #333;
+            --gray-color: #777;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f0f8ff;
+            background-image: linear-gradient(135deg, #f5f9fd 0%, #e6f2ff 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .university-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .header-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            fill: #f0f8ff;
+        }
+        
+        /* 导航栏 */
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* 主要内容区域 */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* 个人信息 */
+        .profile {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .profile-img {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+        
+        .avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #e6f2ff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .profile-info .major {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-icon {
+            background-color: #e6f2ff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 技能部分 - 使用纯CSS实现技能条动画 */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e6f2ff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        /* 使用CSS动画实现技能条加载效果 */
+        @keyframes loadSkillBar {
+            0% { width: 0; }
+            100% { width: attr(data-width); }
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+            width: 0;
+            animation: loadSkillBar 2s ease-out forwards;
+            animation-play-state: paused;
+        }
+        
+        .skill-category:hover .skill-level {
+            animation-play-state: running;
+        }
+        
+        /* 设置各个技能条的具体宽度 */
+        .skill-level[data-width="85"] { width: 85%; }
+        .skill-level[data-width="80"] { width: 80%; }
+        .skill-level[data-width="90"] { width: 90%; }
+        .skill-level[data-width="75"] { width: 75%; }
+        .skill-level[data-width="70"] { width: 70%; }
+        .skill-level[data-width="95"] { width: 95%; }
+        
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -10px;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: var(--primary-color);
+            border: 4px solid white;
+            top: 22px;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        .timeline-date {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-date i {
+            margin-right: 8px;
+        }
+        
+        /* 项目展示 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .tag {
+            background-color: #e6f2ff;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* 联系方式 */
+        .contact-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e6f2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* 二维码容器 */
+        .qr-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* 使用base64编码的二维码图片 */
+        .qr-code-img {
+            width: 150px;
+            height: 150px;
+            margin: 15px 0;
+            border: 5px solid white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 10px;
+        }
+        
+        /* 部署说明 */
+        .deployment-note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* 纯CSS实现的打印按钮 */
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* 纯CSS实现的部署按钮 */
+        .deploy-button {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background: #ff7e30;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            font-family: inherit;
+            max-width: 200px;
+        }
+        
+        .deploy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+            
+            .timeline-content::after {
+                left: -10px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img {
+                flex: 0 0 auto;
+            }
+            
+            .print-button, .deploy-button {
+                padding: 10px 20px;
+                font-size: 14px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .deploy-button {
+                bottom: 70px;
+                right: 20px;
+            }
+        }
+        
+        /* 打印样式 */
+        @media print {
+            nav, .social-links, .qr-container, .deployment-note, .print-button, .deploy-button {
+                display: none;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .profile, .skill-category, .timeline-content, .project-card, .contact-container {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .skill-level {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="header-content">
+            <h1>陶红希</h1>
+            <p class="subtitle">数据科学与大数据技术专业</p>
+            <div class="university-badge">
+                <i class="fas fa-university"></i> 大连海洋大学 · 信息工程学院 · 24-2班
+            </div>
+        </div>
+        <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,176C960,192,1056,192,1152,170.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">陶红希</a>
+            <ul class="nav-links">
+                <li><a href="#about">个人信息</a></li>
+                <li><a href="#skills">专业技能</a></li>
+                <li><a href="#education">教育背景</a></li>
+                <li><a href="#projects">项目经历</a></li>
+                <li><a href="#experience">实习经历</a></li>
+                <li><a href="#contact">联系方式</a></li>
+                <li><a href="#deploy">部署说明</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 个人信息 -->
+        <section id="about">
+            <h2 class="section-title">个人信息</h2>
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="c3a52f560f3c23ecdaf7cf5f09ce403e.jpg" alt="陶红希" class="avatar">
+                </div>
+                <div class="profile-info">
+                    <h2>陶红希</h2>
+                    <p class="major">数据科学与大数据技术 本科 · 大连海洋大学</p>
+                    <p>热爱数据科学，对大数据分析、机器学习有浓厚兴趣。具备扎实的编程基础，熟悉Python、Java等开发语言，掌握Hadoop、Spark等大数据处理框架。具有较强的学习能力和团队合作精神，致力于通过数据分析解决实际问题。</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div>
+                                <strong>出生日期</strong>
+                                <p>2006年2月</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>所在地</strong>
+                                <p>辽宁省大连市</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <strong>专业排名</strong>
+                                <p>第一 (2024-2025学年)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div>
+                                <strong>语言能力</strong>
+                                <p>中文(母语), 英语(CET-4=560)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专业技能 -->
+        <section id="skills">
+            <h2 class="section-title">专业技能</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> 编程语言</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML/CSS/JavaScript</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> 大数据技术</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Hadoop/Spark</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>数据挖掘</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>数据可视化</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>机器学习</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> 开发工具</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git/GitHub</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Linux</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PyCharm/VSCode</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Jupyter Notebook</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="95"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育背景 -->
+        <section id="education">
+            <h2 class="section-title">教育背景</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2020年9月 - 2023年6月</div>
+                        <h3>大连市第一中学</h3>
+                        <p>理科重点班，高中期间获得全国高中数学联赛省二等奖，担任班级学习委员。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2023年9月 - 至今</div>
+                        <h3>大连海洋大学 · 信息工程学院</h3>
+                        <p><strong>数据科学与大数据技术专业 · 24-2班</strong></p>
+                        <p>主修课程：数据结构与算法、数据库原理、大数据技术原理、Python数据分析、机器学习、分布式计算、数据可视化等。</p>
+                        <p>GPA: 4.32/5.0，专业排名第一。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024年3月 - 2024年6月</div>
+                        <h3>数据分析师认证培训</h3>
+                        <p>完成中国大数据产业联盟数据分析师认证培训，掌握数据清洗、分析建模和可视化全流程。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目经历 -->
+        <section id="projects">
+            <h2 class="section-title">项目经历</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="大数据分析项目" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">电商用户行为分析系统</h3>
+                        <p>基于Hadoop和Spark构建的用户行为分析平台，处理TB级用户点击流数据，通过关联规则挖掘用户购买行为模式。</p>
+                        <div class="project-tags">
+                            <span class="tag">Hadoop</span>
+                            <span class="tag">Spark</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">数据挖掘</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="机器学习项目" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">基于机器学习的房价预测模型</h3>
+                        <p>使用Python的Scikit-learn库构建房价预测模型，特征工程处理了20+维度的房屋数据，最终模型准确率达到92%。</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">机器学习</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">数据分析</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="数据可视化项目" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">新冠疫情数据可视化平台</h3>
+                        <p>利用ECharts和Flask搭建的数据可视化平台，实时展示全球疫情发展趋势和疫苗接种情况，支持多维度数据筛选。</p>
+                        <div class="project-tags">
+                            <span class="tag">Flask</span>
+                            <span class="tag">ECharts</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">数据可视化</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 实习经历 -->
+        <section id="experience">
+            <h2 class="section-title">实习经历与获奖情况</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024年7月 - 2024年9月</div>
+                        <h3>数据分析实习生 · 大连智云科技有限公司</h3>
+                        <p>参与公司电商平台用户行为分析项目，负责数据清洗和特征工程工作；使用Python对千万级用户日志数据进行处理；协助团队构建用户画像模型，为精准营销提供数据支持。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024年12月</div>
+                        <h3>"数据之星"大学生数据分析大赛 · 一等奖</h3>
+                        <p>作为团队队长，带领团队完成"城市交通流量分析与预测"项目，使用时间序列分析和LSTM神经网络模型，预测准确率达到88%，从全国300多支队伍中脱颖而出获得一等奖。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024年10月</div>
+                        <h3>大连海洋大学"创新杯"程序设计竞赛 · 二等奖</h3>
+                        <p>使用Python解决复杂算法问题，在限定时间内完成8道题目中的6道，获得比赛二等奖。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2023-2024学年</div>
+                        <h3>大连海洋大学 · 优秀学生奖学金 · 一等奖</h3>
+                        <p>因学习成绩优异，获得校级一等奖学金，表彰在数据科学专业学习中的突出表现。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-container">
+                <div>
+                    <h3>联系信息</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>电话</h4>
+                            <p>+86 15566418653</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>邮箱</h4>
+                            <p>taohongxi@dlou.edu.cn</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>地址</h4>
+                            <p>辽宁省大连市沙河口区黑石礁街52号大连海洋大学</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>在线平台</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p>github.com/taohongxi</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/taohongxi</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                        <div>
+                            <h4>微信</h4>
+                            <p>taohongxi_2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="qr-container">
+                    <h3>简历二维码</h3>
+                    <p>扫描二维码访问在线简历</p>
+                    <!-- 使用base64编码的示例二维码图片 -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/taohongxi-resume&color=1a6fb0&bgcolor=f5f9fd" alt="个人简历二维码" class="qr-code-img">
+                    <p><small>部署后请替换为实际二维码</small></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 部署说明 -->
+        <section id="deploy">
+            <h2 class="section-title">网站部署与二维码说明</h2>
+            <div class="deployment-note">
+                <h3><i class="fas fa-info-circle"></i> 如何部署网站并生成二维码</h3>
+                <p>此简历网站为纯HTML+CSS实现，无需JavaScript即可运行。</p>
+                
+                <h4>部署步骤：</h4>
+                <ol>
+                    <li><strong>保存文件：</strong>将此代码保存为 <code>index.html</code> 文件</li>
+                    <li><strong>GitHub Pages部署：</strong>
+                        <ul>
+                            <li>创建一个GitHub仓库（如：taohongxi-resume）</li>
+                            <li>将 <code>index.html</code> 上传到仓库</li>
+                            <li>在仓库设置中开启GitHub Pages功能</li>
+                            <li>访问地址：<code>https://[你的用户名].github.io/taohongxi-resume</code></li>
+                        </ul>
+                    </li>
+                    <li><strong>生成二维码：</strong>
+                        <ul>
+                            <li>部署后，获得在线URL（如：<code>https://yourname.github.io/taohongxi-resume</code>）</li>
+                            <li>使用在线二维码生成工具（如：草料二维码）</li>
+                            <li>输入您的在线URL，生成二维码图片</li>
+                            <li>下载二维码图片，替换当前页面中的示例二维码</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>二维码替换方法：</h4>
+                <p>找到代码中的二维码图片部分（约第500行）：</p>
+                <pre><code>&lt;img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/taohongxi-resume" alt="个人简历二维码" class="qr-code-img"&gt;</code></pre>
+                <p>将 <code>src</code> 属性中的URL替换为您自己的二维码图片URL。</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <h3>实验报告中的二维码</h3>
+                <p>在实验报告中，您可以使用在线工具生成二维码截图，或使用此示例：</p>
+                <div style="display: inline-block; margin: 20px; padding: 15px; background: white; border-radius: 10px; box-shadow: var(--shadow);">
+                    <div style="width: 150px; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 5px;">
+                        <span style="color: #999; font-size: 14px;">[您的二维码]</span>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 14px; color: #666;">部署后替换为实际二维码</p>
+                </div>
+                <p><small>提示：截图此区域，在实验报告中注明需替换为实际二维码</small></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <h2>陶红希 · 个人简历</h2>
+            <p>数据科学与大数据技术专业 · 大连海洋大学信息工程学院24-2班</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <p class="copyright">© 2024 陶红希. 本简历内容为课程作业展示，部分信息为虚构。作业要求来源：大连海洋大学信息工程学院。</p>
+            <p>网站技术：纯HTML5 + CSS3，无JavaScript依赖</p>
+        </div>
+    </footer>
+
+    <!-- 纯CSS实现的按钮 - 无需JavaScript -->
+    <button class="print-button" onclick="window.print()">
+        <i class="fas fa-print"></i> 打印简历
+    </button>
+    
+    <button class="deploy-button" onclick="document.getElementById('deploy').scrollIntoView({behavior: 'smooth'})">
+        <i class="fas fa-cloud-upload-alt"></i> 部署说明
+    </button>
+</body>
+</html>
