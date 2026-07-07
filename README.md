@@ -1,47 +1,47 @@
-# Yue-xin G. | Personal Homepage
+# Yue-xin G. | 个人主页
 
-## About
+## 关于
 
-Personal homepage of Yue-xin G., built with Vue 3 + Vite.
-Yue-xin G. 的个人主页，使用 Vue 3 + Vite 构建。
+Yue-xin G. 的个人主页，基于 Vue 3 + Vite 构建。
 
-## Tech Stack
+## 技术栈
 
-- Vue 3.4 (Composition API + `<script setup>`)
-- Vite 5.2 (Build Tool)
-- Google Fonts (Inter + Noto Sans SC)
-- CSS3 (Grid, Flexbox, Animations)
+- Vue 3.4（Composition API + `<script setup>` 语法）
+- Vite 5.2（构建工具）
+- Google Fonts（Inter + Noto Sans SC）
+- CSS3（Grid、Flexbox、动画）
 
-## Features
+## 功能特性
 
-- Single Page Application (SPA)
-- Component-based architecture (7 components)
-- Responsive design (mobile-friendly)
-- Smooth scroll navigation
-- Fade-up animations
-- Automatic deployment via GitHub Actions → `gh-pages` branch
+- 单页应用（SPA）架构
+- 组件化开发（7 个组件）
+- 响应式设计（适配移动端）
+- 平滑滚动导航
+- 淡入动画效果
+- GitHub Actions 自动部署到 `gh-pages` 分支
 
-## Local Development
+## 本地开发
 
 ```bash
-# Install dependencies
+# 安装依赖
 npm install
 
-# Start dev server (port 3000, auto-open)
+# 启动开发服务器（端口 3000，自动打开浏览器）
 npm run dev
 
-# Build for production
+# 构建生产版本
 npm run build
 
-# Preview built files
+# 预览构建产物
 npm run preview
 ```
 
-## Deployment
+## 部署
 
-Automatically deployed to GitHub Pages on every push to `main` via GitHub Actions.
-每次 push 到 `main` 分支，GitHub Actions 会自动构建并部署到 GitHub Pages。
+通过 GitHub Actions 自动部署，每次 push 到 `main` 分支时会自动构建并推送到 `gh-pages` 分支。
 
-## License
+GitHub Pages 地址：https://qyyyy09315.github.io/
+
+## 开源协议
 
 MIT License
