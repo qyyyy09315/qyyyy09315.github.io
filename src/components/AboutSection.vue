@@ -1,25 +1,27 @@
 <template>
   <section id="about" class="section">
-    <div class="section-header">
-      <h2>About Me</h2>
-      <p>关于我</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-item">
-        <label>Name</label>
-        <span>Yue-xin G.</span>
+    <div class="content">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p>关于我</p>
       </div>
-      <div class="about-item">
-        <label>Location</label>
-        <span>Dalian, China</span>
-      </div>
-      <div class="about-item">
-        <label>Major</label>
-        <span>Big Data Science</span>
-      </div>
-      <div class="about-item">
-        <label>Interests</label>
-        <span>ML · Data Science · Math Modeling</span>
+      <div class="about-grid">
+        <div class="about-item">
+          <label>Name</label>
+          <span>Yue-xin G.</span>
+        </div>
+        <div class="about-item">
+          <label>Location</label>
+          <span>Dalian, China</span>
+        </div>
+        <div class="about-item">
+          <label>Major</label>
+          <span>Big Data Science</span>
+        </div>
+        <div class="about-item">
+          <label>Interests</label>
+          <span>ML · Data Science · Math Modeling</span>
+        </div>
       </div>
     </div>
   </section>
@@ -27,8 +29,18 @@
 
 <style scoped>
 .section {
-  padding: 4rem 0;
-  border-top: 1px solid #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0;
+}
+
+.content {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-header {

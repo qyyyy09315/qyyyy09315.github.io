@@ -1,20 +1,22 @@
 <template>
   <section id="education" class="section">
-    <div class="section-header">
-      <h2>Education</h2>
-      <p>教育背景</p>
-    </div>
-    <div class="edu-list">
-      <div
-        v-for="item in education"
-        :key="item.school"
-        class="edu-item"
-      >
-        <div>
-          <div class="edu-school">{{ item.school }}</div>
-          <div class="edu-major">{{ item.major }}</div>
+    <div class="content">
+      <div class="section-header">
+        <h2>Education</h2>
+        <p>教育背景</p>
+      </div>
+      <div class="edu-list">
+        <div
+          v-for="item in education"
+          :key="item.school"
+          class="edu-item"
+        >
+          <div>
+            <div class="edu-school">{{ item.school }}</div>
+            <div class="edu-major">{{ item.major }}</div>
+          </div>
+          <span class="edu-year">{{ item.year }}</span>
         </div>
-        <span class="edu-year">{{ item.year }}</span>
       </div>
     </div>
   </section>
@@ -39,8 +41,18 @@ const education = ref([
 
 <style scoped>
 .section {
-  padding: 4rem 0;
-  border-top: 1px solid #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0;
+}
+
+.content {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-header {

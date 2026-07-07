@@ -1,36 +1,44 @@
 <template>
   <section class="hero">
-    <span class="hero-label">Hello, World</span>
-    <h1>I'm Yue-xin G.</h1>
-    <p class="hero-subtitle">
-      大数据专业学生 · 对机器学习和数据科学充满热情<br>
-      Passionate about Machine Learning &amp; Data Science
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary" @click.prevent="scrollTo('contact')">
-        <span>Get in Touch</span>
-      </a>
-      <a href="#skills" class="btn btn-secondary" @click.prevent="scrollTo('skills')">
-        View Skills
-      </a>
+    <div class="content">
+      <span class="hero-label">Hello, World</span>
+      <h1>I'm Yue-xin G.</h1>
+      <p class="hero-subtitle">
+        大数据专业学生 · 对机器学习和数据科学充满热情<br>
+        Passionate about Machine Learning &amp; Data Science
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" @click="navTo(4)">
+          Get in Touch
+        </button>
+        <button class="btn btn-secondary" @click="navTo(2)">
+          View Skills
+        </button>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const scrollTo = (id) => {
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
+import { inject } from 'vue'
+
+const navTo = inject('navigateTo', () => {})
 </script>
 
 <style scoped>
 .hero {
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 0 4rem;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.content {
+  max-width: 960px;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .hero-label {
@@ -100,7 +108,7 @@ const scrollTo = (id) => {
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 60vh;
+    min-height: 100vh;
     padding: 5rem 0 3rem;
   }
 }

@@ -1,18 +1,26 @@
 <template>
   <section id="contact" class="section">
-    <div class="section-header">
-      <h2>Contact</h2>
-      <p>联系方式</p>
-    </div>
-    <div class="contact-grid">
-      <div
-        v-for="card in contacts"
-        :key="card.title"
-        class="contact-card"
-      >
-        <div class="icon" v-html="card.icon"></div>
-        <h3>{{ card.title }}</h3>
-        <a :href="card.link" target="_blank">{{ card.value }}</a>
+    <div class="content">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>联系方式</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon" v-html="contacts[0].icon"></div>
+          <h3>{{ contacts[0].title }}</h3>
+          <a :href="contacts[0].link">{{ contacts[0].value }}</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon" v-html="contacts[1].icon"></div>
+          <h3>{{ contacts[1].title }}</h3>
+          <a :href="contacts[1].link" target="_blank">{{ contacts[1].value }}</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon" v-html="contacts[2].icon"></div>
+          <h3>{{ contacts[2].title }}</h3>
+          <p>{{ contacts[2].value }}</p>
+        </div>
       </div>
     </div>
   </section>
@@ -26,7 +34,7 @@ const contacts = ref([
     title: 'Email',
     value: 'contact@example.com',
     link: 'mailto:contact@example.com',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>'
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>'
   },
   {
     title: 'GitHub',
@@ -38,21 +46,25 @@ const contacts = ref([
     title: 'Location',
     value: 'Dalian, Liaoning, China',
     link: '#',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
-  },
-  {
-    title: 'Phone',
-    value: '+86 1xx-xxxx-xxxx',
-    link: '#',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'
   }
 ])
 </script>
 
 <style scoped>
 .section {
-  padding: 4rem 0;
-  border-top: 1px solid #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0;
+}
+
+.content {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-header {
@@ -73,7 +85,7 @@ const contacts = ref([
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
@@ -108,7 +120,8 @@ const contacts = ref([
   margin-bottom: 0.25rem;
 }
 
-.contact-card a {
+.contact-card a,
+.contact-card p {
   font-size: 0.875rem;
   color: #6b7280;
   text-decoration: none;

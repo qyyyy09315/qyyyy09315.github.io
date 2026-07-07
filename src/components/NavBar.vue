@@ -1,16 +1,23 @@
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">Yue-xin G.</a>
+      <a href="#" class="nav-logo" @click.prevent="$emit('navigate', 0)">Yue-xin G.</a>
       <ul class="nav-links">
-        <li><a href="#about">关于</a></li>
-        <li><a href="#skills">技能</a></li>
-        <li><a href="#education">教育</a></li>
-        <li><a href="#contact">联系</a></li>
+        <li><a href="#about" :class="{ active: currentSection === 1 }" @click.prevent="$emit('navigate', 1)">关于</a></li>
+        <li><a href="#skills" :class="{ active: currentSection === 2 }" @click.prevent="$emit('navigate', 2)">技能</a></li>
+        <li><a href="#education" :class="{ active: currentSection === 3 }" @click.prevent="$emit('navigate', 3)">教育</a></li>
+        <li><a href="#contact" :class="{ active: currentSection === 4 }" @click.prevent="$emit('navigate', 4)">联系</a></li>
       </ul>
     </div>
   </nav>
 </template>
+
+<script setup>
+defineProps({
+  currentSection: { type: Number, default: 0 }
+})
+defineEmits(['navigate'])
+</script>
 
 <style scoped>
 .navbar {
@@ -18,7 +25,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #e5e7eb;
   z-index: 100;
@@ -56,7 +63,8 @@
   transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: #2563eb;
 }
 

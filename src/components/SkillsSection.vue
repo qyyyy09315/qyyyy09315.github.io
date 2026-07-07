@@ -1,17 +1,19 @@
 <template>
   <section id="skills" class="section">
-    <div class="section-header">
-      <h2>Skills</h2>
-      <p>专业技能</p>
-    </div>
-    <div class="skills-list">
-      <span
-        v-for="skill in skills"
-        :key="skill"
-        class="skill-tag"
-      >
-        {{ skill }}
-      </span>
+    <div class="content">
+      <div class="section-header">
+        <h2>Skills</h2>
+        <p>专业技能</p>
+      </div>
+      <div class="skills-list">
+        <span
+          v-for="skill in skills"
+          :key="skill"
+          class="skill-tag"
+        >
+          {{ skill }}
+        </span>
+      </div>
     </div>
   </section>
 </template>
@@ -20,29 +22,27 @@
 import { ref } from 'vue'
 
 const skills = ref([
-  'Python',
-  'R',
-  'SQL',
-  'Machine Learning',
-  'Deep Learning',
-  'Data Analysis',
-  'Pandas / NumPy',
-  'Scikit-learn',
-  'PyTorch',
-  'TensorFlow',
-  'Matplotlib',
-  'Hadoop',
-  'Spark',
-  'Git',
-  'Linux',
+  'Python', 'R', 'SQL', 'Machine Learning', 'Deep Learning',
+  'Data Analysis', 'Pandas / NumPy', 'Scikit-learn', 'PyTorch',
+  'TensorFlow', 'Matplotlib', 'Hadoop', 'Spark', 'Git', 'Linux',
   'Mathematical Modeling'
 ])
 </script>
 
 <style scoped>
 .section {
-  padding: 4rem 0;
-  border-top: 1px solid #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0;
+}
+
+.content {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-header {
@@ -75,6 +75,7 @@ const skills = ref([
   font-size: 0.875rem;
   font-weight: 500;
   transition: transform 0.2s;
+  cursor: default;
 }
 
 .skill-tag:hover {
