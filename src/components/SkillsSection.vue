@@ -2,10 +2,10 @@
   <section id="skills" class="section">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">02 / Skills</span></div>
-        <h2 class="section-title animate animate-delay-1">Technical Skills</h2>
+        <div class="animate"><span class="section-label">02 / 技能</span></div>
+        <h2 class="section-title animate animate-delay-1">专业技能</h2>
         <p class="section-subtitle animate animate-delay-2">
-          专业技能
+          技术栈与工具
         </p>
       </div>
 
@@ -13,7 +13,7 @@
         <div class="card skill-card animate animate-delay-2">
           <div class="skill-header">
             <span class="skill-icon">💻</span>
-            <span class="skill-category">Languages</span>
+            <span class="skill-category">编程语言</span>
           </div>
           <div class="skill-tags">
             <span class="tag">Python</span>
@@ -26,7 +26,7 @@
         <div class="card skill-card animate animate-delay-3">
           <div class="skill-header">
             <span class="skill-icon">🤖</span>
-            <span class="skill-category">Machine Learning</span>
+            <span class="skill-category">机器学习</span>
           </div>
           <div class="skill-tags">
             <span class="tag">Scikit-learn</span>
@@ -40,7 +40,7 @@
         <div class="card skill-card animate animate-delay-4">
           <div class="skill-header">
             <span class="skill-icon">📊</span>
-            <span class="skill-category">Data & Analysis</span>
+            <span class="skill-category">数据分析</span>
           </div>
           <div class="skill-tags">
             <span class="tag">Matplotlib</span>
@@ -53,13 +53,13 @@
         <div class="card skill-card animate animate-delay-5">
           <div class="skill-header">
             <span class="skill-icon">🛠️</span>
-            <span class="skill-category">Tools</span>
+            <span class="skill-category">开发工具</span>
           </div>
           <div class="skill-tags">
             <span class="tag">Git</span>
             <span class="tag">Linux</span>
             <span class="tag">Docker</span>
-            <span class="tag">Vim</span>
+            <span class="tag">VS Code</span>
           </div>
         </div>
       </div>
@@ -78,6 +78,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  padding: var(--space-8);
 }
 
 .skill-header {

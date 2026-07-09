@@ -2,24 +2,24 @@
   <section id="education" class="section">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">03 / Education</span></div>
-        <h2 class="section-title animate animate-delay-1">Academic Background</h2>
+        <div class="animate"><span class="section-label">03 / 教育</span></div>
+        <h2 class="section-title animate animate-delay-1">教育背景</h2>
         <p class="section-subtitle animate animate-delay-2">
-          教育背景
+          学习经历
         </p>
       </div>
 
       <div class="edu-timeline">
         <div class="edu-card card animate animate-delay-2">
           <div class="edu-year">2024 — 2028</div>
-          <h3 class="edu-school">Dalian Ocean University</h3>
-          <p class="edu-major">Big Data Science · Bachelor of Science</p>
+          <h3 class="edu-school">大连海洋大学</h3>
+          <p class="edu-major">数据科学与大数据技术 · 本科</p>
         </div>
 
         <div class="edu-card card animate animate-delay-3">
           <div class="edu-year">2021 — 2024</div>
-          <h3 class="edu-school">High School Affiliated to Dalian University of Technology</h3>
-          <p class="edu-major">High School Diploma</p>
+          <h3 class="edu-school">大连理工大学附属高级中学</h3>
+          <p class="edu-major">高中</p>
         </div>
       </div>
     </div>
@@ -38,6 +38,7 @@
   grid-template-columns: 200px 1fr;
   gap: 1.5rem;
   align-items: center;
+  padding: var(--space-8);
 }
 
 .edu-year {

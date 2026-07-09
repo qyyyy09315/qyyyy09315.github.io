@@ -2,10 +2,10 @@
   <section id="about" class="section">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">01 / About</span></div>
-        <h2 class="section-title animate animate-delay-1">About Me</h2>
+        <div class="animate"><span class="section-label">01 / 关于</span></div>
+        <h2 class="section-title animate animate-delay-1">关于我</h2>
         <p class="section-subtitle animate animate-delay-2">
-          关于我
+          基本信息与自我介绍
         </p>
       </div>
 
@@ -15,8 +15,8 @@
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
           </div>
           <div class="card-text">
-            <span class="meta">Name</span>
-            <span class="value">Yue-xin G.</span>
+            <span class="meta">姓名</span>
+            <span class="value">岳馨</span>
           </div>
         </div>
 
@@ -25,8 +25,8 @@
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
           </div>
           <div class="card-text">
-            <span class="meta">Location</span>
-            <span class="value">Dalian, China</span>
+            <span class="meta">所在地</span>
+            <span class="value">辽宁大连</span>
           </div>
         </div>
 
@@ -35,8 +35,8 @@
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           </div>
           <div class="card-text">
-            <span class="meta">Major</span>
-            <span class="value">Big Data Science</span>
+            <span class="meta">专业</span>
+            <span class="value">数据科学与大数据技术</span>
           </div>
         </div>
 
@@ -45,16 +45,16 @@
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <div class="card-text">
-            <span class="meta">Year</span>
-            <span class="value">2024 - 2028</span>
+            <span class="meta">年级</span>
+            <span class="value">2024 级 · 本科</span>
           </div>
         </div>
       </div>
 
       <p class="about-bio animate animate-delay-6">
-        对机器学习和数据科学有浓厚兴趣，
-        专注于将统计方法与软件工程结合，
-        探索数据驱动的解决方案。
+        就读于大连海洋大学，对机器学习和数据科学有浓厚兴趣。
+        专注于将统计方法与软件工程相结合，
+        探索数据驱动的解决方案，热衷于用数据讲故事。
       </p>
     </div>
   </section>
@@ -65,7 +65,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .about-card {

@@ -2,29 +2,29 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="hero-overline">Portfolio · 2024</span>
-        <h1 class="hero-title">Yue-xin G.</h1>
+        <span class="hero-overline">个人主页 · 2024</span>
+        <h1 class="hero-title">岳馨</h1>
         <p class="hero-tagline">
-          Big Data student &amp; aspiring data scientist exploring
-          the intersection of machine learning, statistics, and software.
+          大数据专业学生 · 数据科学方向学习者<br>
+          专注于机器学习、统计分析与软件工程的交叉领域
         </p>
         <div class="hero-meta">
           <span class="meta-item">
             <span class="meta-dot"></span>
-            Dalian, China
+            辽宁大连
           </span>
           <span class="meta-item">
             <span class="meta-dot"></span>
-            Big Data Science
+            数据科学与大数据技术
           </span>
         </div>
         <div class="hero-actions">
           <button class="btn btn-primary" @click="navTo(4)">
-            <span>Get in Touch</span>
+            <span>联系我</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </button>
           <button class="btn btn-secondary" @click="navTo(2)">
-            View Skills
+            查看技能
           </button>
         </div>
       </div>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="scroll-hint">
-      <span>Scroll</span>
+      <span>滑动</span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -62,7 +62,7 @@ const navTo = inject('navigateTo', () => {})
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 2rem 4rem;
+  padding: 5rem 2rem 3rem;
   position: relative;
 }
 
@@ -71,52 +71,51 @@ const navTo = inject('navigateTo', () => {})
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 5rem;
   align-items: center;
 }
 
 .hero-overline {
   font-family: var(--font-mono);
-  font-size: var(--text-sm);
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: .12em;
-  margin-bottom: 2rem;
+  letter-spacing: .1em;
+  margin-bottom: 1.5rem;
   display: block;
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: clamp(4rem, 9vw, 7rem);
   font-weight: 700;
-  letter-spacing: -.04em;
+  letter-spacing: -.03em;
   line-height: 1.05;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-tagline {
-  font-size: var(--text-xl);
+  font-size: 1.25rem;
   color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 520px;
-  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 2rem;
 }
 
 .hero-meta {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
 }
 
 .meta-item {
   display: flex;
   align-items: center;
-  gap: .625rem;
-  font-size: var(--text-base);
-  color: var(--text-muted);
-  font-family: var(--font-mono);
+  gap: .5rem;
+  font-size: .9375rem;
+  color: var(--text-secondary);
 }
 
 .meta-dot {
@@ -125,12 +124,12 @@ const navTo = inject('navigateTo', () => {})
   border-radius: 50%;
   background: #22c55e;
   display: inline-block;
-  box-shadow: 0 0 8px #22c55e66;
+  box-shadow: 0 0 6px rgba(34, 197, 94, .5);
 }
 
 .hero-actions {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -139,13 +138,13 @@ const navTo = inject('navigateTo', () => {})
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .avatar-frame {
   position: relative;
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -154,16 +153,13 @@ const navTo = inject('navigateTo', () => {})
 .avatar-gradient {
   position: absolute;
   inset: 0;
-  background: conic-gradient(
-    from 0deg,
-    #eff6ff, #dbeafe, #bfdbfe, #93c5fd,
-    #60a5fa, #3b82f6, #2563eb, #1d4ed8,
-    #1e40af, #1e3a8a, #172554, #eff6ff
-  );
+  background: conic-gradient(from 0deg, #eff6ff, #dbeafe, #bfdbfe, #93c5fd, #60a5fa, #3b82f6, #2563eb, #1d4ed8, #1e40af, #1e3a8a, #172554, #eff6ff);
   animation: rotate 20s linear infinite;
 }
 
-@keyframes rotate { to { transform: rotate(360deg); } }
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
 
 .avatar-content {
   position: absolute;
@@ -179,52 +175,52 @@ const navTo = inject('navigateTo', () => {})
   font-family: var(--font-mono);
   font-size: 3.5rem;
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .hero-decor {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .decor-line {
   display: block;
   width: 1px;
-  height: 56px;
+  height: 48px;
   background: linear-gradient(to bottom, transparent, var(--border));
 }
 
 .decor-line.short {
-  height: 36px;
+  height: 32px;
   opacity: .6;
 }
 
 /* Scroll hint */
 .scroll-hint {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .scroll-hint span {
   font-family: var(--font-mono);
-  font-size: .75rem;
+  font-size: .6875rem;
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   color: var(--text-muted);
   writing-mode: vertical-rl;
 }
 
 .scroll-line {
   width: 1px;
-  height: 48px;
+  height: 40px;
   background: linear-gradient(to bottom, var(--border), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
@@ -238,13 +234,13 @@ const navTo = inject('navigateTo', () => {})
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 3rem;
+    gap: 2.5rem;
   }
   .hero-tagline { max-width: 100%; }
   .hero-meta { justify-content: center; }
   .hero-actions { justify-content: center; }
   .hero-visual { order: -1; }
-  .avatar-frame { width: 160px; height: 160px; }
+  .avatar-frame { width: 150px; height: 150px; }
   .avatar-mono { font-size: 2.25rem; }
 }
 </style>

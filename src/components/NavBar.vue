@@ -2,7 +2,7 @@
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="nav-inner">
       <a href="#" class="nav-logo" @click.prevent="$emit('navigate', 0)">
-        <span class="logo-bracket">&lt;</span>Yue-xin G.<span class="logo-bracket">/&gt;</span>
+        <span class="logo-bracket">&lt;</span>岳馨<span class="logo-bracket">/&gt;</span>
       </a>
 
       <ul class="nav-links">
@@ -30,10 +30,10 @@ defineProps({
 defineEmits(['navigate'])
 
 const links = [
-  { label: 'About', href: '#about', index: 1 },
-  { label: 'Skills', href: '#skills', index: 2 },
-  { label: 'Education', href: '#education', index: 3 },
-  { label: 'Contact', href: '#contact', index: 4 }
+  { label: '关于', href: '#about', index: 1 },
+  { label: '技能', href: '#skills', index: 2 },
+  { label: '教育', href: '#education', index: 3 },
+  { label: '联系', href: '#contact', index: 4 }
 ]
 
 const isScrolled = ref(false)

@@ -2,10 +2,10 @@
   <section id="contact" class="section">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">04 / Contact</span></div>
-        <h2 class="section-title animate animate-delay-1">Get in Touch</h2>
+        <div class="animate"><span class="section-label">04 / 联系</span></div>
+        <h2 class="section-title animate animate-delay-1">联系方式</h2>
         <p class="section-subtitle animate animate-delay-2">
-          联系方式
+          欢迎通过以下方式联系
         </p>
       </div>
 
@@ -14,7 +14,7 @@
           <div class="contact-icon">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <span class="contact-label">Email</span>
+          <span class="contact-label">邮箱</span>
           <a href="mailto:contact@example.com" class="contact-value">contact@example.com</a>
         </div>
 
@@ -38,8 +38,8 @@
           <div class="contact-icon">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <span class="contact-label">Location</span>
-          <span class="contact-value">Dalian, China</span>
+          <span class="contact-label">所在地</span>
+          <span class="contact-value">辽宁大连</span>
         </div>
       </div>
     </div>
@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  padding: var(--space-8);
 }
 
 .contact-icon {

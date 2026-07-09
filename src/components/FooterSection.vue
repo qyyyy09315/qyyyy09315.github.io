@@ -3,7 +3,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-info">
-          <h2 class="footer-title">Yue-xin G.</h2>
+          <h2 class="footer-title">岳馨</h2>
           <p class="footer-tagline">
             感谢阅读 · Thanks for scrolling
           </p>
@@ -11,25 +11,25 @@
 
         <div class="footer-nav">
           <div class="footer-col">
-            <h4 class="footer-nav-label">Pages</h4>
-            <button class="footer-link" @click="goTo(0)">Home</button>
-            <button class="footer-link" @click="goTo(1)">About</button>
-            <button class="footer-link" @click="goTo(2)">Skills</button>
-            <button class="footer-link" @click="goTo(3)">Education</button>
+            <h4 class="footer-nav-label">页面</h4>
+            <button class="footer-link" @click="goTo(0)">首页</button>
+            <button class="footer-link" @click="goTo(1)">关于</button>
+            <button class="footer-link" @click="goTo(2)">技能</button>
+            <button class="footer-link" @click="goTo(3)">教育</button>
           </div>
           <div class="footer-col">
-            <h4 class="footer-nav-label">Links</h4>
+            <h4 class="footer-nav-label">链接</h4>
             <a class="footer-link" href="https://github.com/qyyyy09315">GitHub</a>
             <a class="footer-link" href="#">LinkedIn</a>
-            <a class="footer-link" href="mailto:contact@example.com">Email</a>
+            <a class="footer-link" href="mailto:contact@example.com">邮箱</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span class="footer-copyright">&copy; {{ currentYear }} Yue-xin G. · Built with Vue 3 + Vite</span>
+        <span class="footer-copyright">&copy; {{ currentYear }} 岳馨 · 基于 Vue 3 + Vite 构建</span>
         <button class="footer-back" @click="goTo(0)">
-          Back to Top
+          返回顶部
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
         </button>
       </div>
@@ -50,7 +50,7 @@ const goTo = inject('navigateTo', () => {})
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--space-24) var(--space-6);
+  padding: 6rem 2rem;
   background: #0a0a0a;
   color: #fff;
 }
@@ -111,7 +111,7 @@ const goTo = inject('navigateTo', () => {})
   cursor: pointer;
   text-align: left;
   padding: 0;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer-link:hover {
@@ -140,7 +140,7 @@ const goTo = inject('navigateTo', () => {})
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer-back:hover {
