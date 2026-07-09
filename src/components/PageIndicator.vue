@@ -3,10 +3,13 @@
     <button
       v-for="index in total"
       :key="index"
-      :class="['dot', { active: index - 1 === current }]"
+      :class="['indicator-dot', { active: index - 1 === current }]"
       @click="$emit('select', index - 1)"
       :aria-label="`Go to page ${index}`"
-    />
+    >
+      <span class="dot-inner"></span>
+      <span class="dot-label">{{ labels[index - 1] }}</span>
+    </button>
   </div>
 </template>
 
@@ -16,6 +19,8 @@ defineProps({
   current: { type: Number, required: true }
 })
 defineEmits(['select'])
+
+const labels = ['Home', 'About', 'Skills', 'Edu', 'Contact', 'Footer']
 </script>
 
 <style scoped>
@@ -26,33 +31,64 @@ defineEmits(['select'])
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   z-index: 50;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #d1d5db;
+.indicator-dot {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
-  padding: 0;
+  padding: 0.375rem 0;
+  position: relative;
 }
 
-.dot:hover {
-  background: #9ca3af;
+.dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all var(--duration-normal) var(--ease-out);
+  flex-shrink: 0;
 }
 
-.dot.active {
-  background: #2563eb;
+.indicator-dot:hover .dot-inner {
+  background: var(--text-muted);
+  transform: scale(1.2);
+}
+
+.indicator-dot.active .dot-inner {
+  background: var(--accent);
   transform: scale(1.3);
 }
 
-@media (max-width: 640px) {
+.dot-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all var(--duration-normal) var(--ease-out);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.indicator-dot:hover .dot-label,
+.indicator-dot.active .dot-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
   .page-indicator {
     right: 1rem;
+  }
+
+  .dot-label {
+    display: none;
   }
 }
 </style>

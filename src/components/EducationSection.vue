@@ -1,114 +1,119 @@
 <template>
-  <section id="education" class="section">
+  <section id="education" class="section education-section">
     <div class="content">
       <div class="section-header">
-        <h2>Education</h2>
-        <p>教育背景</p>
+        <span class="section-label">03 / Education</span>
+        <h2 class="section-title">Academic Background</h2>
       </div>
-      <div class="edu-list">
-        <div
-          v-for="item in education"
-          :key="item.school"
-          class="edu-item"
-        >
-          <div>
-            <div class="edu-school">{{ item.school }}</div>
-            <div class="edu-major">{{ item.major }}</div>
+
+      <div class="edu-timeline">
+        <div class="edu-card card">
+          <div class="edu-card-inner">
+            <div class="edu-year">
+              <span class="year-badge">2024 — 2028</span>
+            </div>
+            <div class="edu-details">
+              <h3 class="edu-school">Dalian Ocean University</h3>
+              <p class="edu-degree">Bachelor of Science in Big Data Science</p>
+              <div class="edu-meta">
+                <span class="edu-tag">Undergraduate</span>
+                <span class="edu-tag">Full-time</span>
+              </div>
+            </div>
           </div>
-          <span class="edu-year">{{ item.year }}</span>
+        </div>
+
+        <div class="edu-card card">
+          <div class="edu-card-inner">
+            <div class="edu-year">
+              <span class="year-badge">2021 — 2024</span>
+            </div>
+            <div class="edu-details">
+              <h3 class="edu-school">High School Affiliated to Dalian University of Technology</h3>
+              <p class="edu-degree">High School Diploma</p>
+              <div class="edu-meta">
+                <span class="edu-tag">Graduated</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
-const education = ref([
-  {
-    school: 'Dalian Ocean University',
-    major: 'Bachelor of Science in Big Data Science',
-    year: '2024 - 2028'
-  },
-  {
-    school: 'High School Affiliated to Dalian University of Technology',
-    major: 'High School Diploma',
-    year: '2021 - 2024'
-  }
-])
-</script>
-
 <style scoped>
-.section {
-  min-height: 100vh;
+.education-section {
+  padding: 5rem 2rem;
+}
+
+.edu-timeline {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 6rem 0;
+  gap: 1rem;
+  max-width: 720px;
 }
 
-.content {
-  max-width: 960px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.section-header {
-  margin-bottom: 2.5rem;
-}
-
-.section-header h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.section-header p {
-  color: #6b7280;
-  margin-top: 0.5rem;
-  font-size: 0.9375rem;
-}
-
-.edu-item {
+.edu-card-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.edu-item:last-child {
-  border-bottom: none;
-}
-
-.edu-school {
-  font-weight: 500;
-  font-size: 0.9375rem;
-}
-
-.edu-major {
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin-top: 0.25rem;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
 .edu-year {
+  flex-shrink: 0;
+  min-width: 140px;
+}
+
+.year-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.375rem 0.75rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.edu-details {
+  flex: 1;
+}
+
+.edu-school {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.edu-degree {
   font-size: 0.875rem;
-  color: #6b7280;
-  white-space: nowrap;
-  margin-left: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.edu-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 @media (max-width: 640px) {
-  .edu-item {
+  .edu-card-inner {
     flex-direction: column;
-  }
-
-  .edu-year {
-    margin-left: 0;
-    margin-top: 0.5rem;
+    gap: 1rem;
   }
 }
 </style>

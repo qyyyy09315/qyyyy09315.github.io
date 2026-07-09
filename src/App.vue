@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <NavBar :current-section="currentPage" @navigate="scrollTo" />
-    <div class="scroll-container" ref="container">
+    <main class="scroll-container" ref="container">
       <section
         v-for="(section, index) in sections"
         :key="section.id"
@@ -11,7 +11,7 @@
       >
         <component :is="section.component" />
       </section>
-    </div>
+    </main>
     <PageIndicator :total="sections.length" :current="currentPage" @select="scrollTo" />
   </div>
 </template>
