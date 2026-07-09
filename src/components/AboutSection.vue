@@ -16,7 +16,7 @@
           </div>
           <div class="card-text">
             <span class="meta">姓名</span>
-            <span class="value">岳馨</span>
+            <span class="value">Yue-xin G.</span>
           </div>
         </div>
 

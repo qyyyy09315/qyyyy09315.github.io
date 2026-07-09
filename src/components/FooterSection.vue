@@ -3,7 +3,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-info">
-          <h2 class="footer-title">岳馨</h2>
+          <h2 class="footer-title">Yue-xin G.</h2>
           <p class="footer-tagline">
             感谢阅读 · Thanks for scrolling
           </p>
@@ -27,7 +27,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span class="footer-copyright">&copy; {{ currentYear }} 岳馨 · 基于 Vue 3 + Vite 构建</span>
+        <span class="footer-copyright">&copy; {{ currentYear }} Yue-xin G. · 基于 Vue 3 + Vite 构建</span>
         <button class="footer-back" @click="goTo(0)">
           返回顶部
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>

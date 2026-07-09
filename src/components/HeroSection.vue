@@ -3,7 +3,7 @@
     <div class="hero-inner">
       <div class="hero-content">
         <span class="hero-overline">个人主页 · 2024</span>
-        <h1 class="hero-title">岳馨</h1>
+        <h1 class="hero-title">Yue-xin G.</h1>
         <p class="hero-tagline">
           大数据专业学生 · 数据科学方向学习者<br>
           专注于机器学习、统计分析与软件工程的交叉领域

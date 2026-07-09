@@ -2,7 +2,7 @@
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="nav-inner">
       <a href="#" class="nav-logo" @click.prevent="$emit('navigate', 0)">
-        <span class="logo-bracket">&lt;</span>岳馨<span class="logo-bracket">/&gt;</span>
+        <span class="logo-bracket">&lt;</span>Yue-xin G.<span class="logo-bracket">/&gt;</span>
       </a>
 
       <ul class="nav-links">
