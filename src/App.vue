@@ -6,7 +6,7 @@
         v-for="(section, index) in sections"
         :key="section.id"
         :id="section.id"
-        :ref="el => setSectionRef(el, index)"
+        ref="sectionRefs"
         class="full-page-section"
       >
         <component :is="section.component" />
@@ -41,10 +41,6 @@ const currentPage = ref(0)
 const isScrolling = ref(false)
 const sectionRefs = ref([])
 const container = ref(null)
-
-const setSectionRef = (el, index) => {
-  if (el) sectionRefs.value[index] = el
-}
 
 const scrollTo = (index) => {
   if (index < 0 || index >= sections.value.length || isScrolling.value) return
