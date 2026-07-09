@@ -122,18 +122,6 @@ body {
   to { opacity: 1; }
 }
 
-.animate { opacity: 0; animation-fill-mode: both; }
-.animate.is-visible {
-  animation-name: fadeUp;
-  animation-duration: var(--duration-slow);
-  animation-timing-function: var(--ease-out);
-}
-
-.animate-delay-1 { animation-delay: 80ms; }
-.animate-delay-2 { animation-delay: 160ms; }
-.animate-delay-3 { animation-delay: 240ms; }
-.animate-delay-4 { animation-delay: 320ms; }
-
 /* Card */
 .card {
   background: var(--bg-elevated);
