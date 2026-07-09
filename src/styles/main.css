@@ -59,10 +59,18 @@ body, p, h1, h2, h3, span, div, button, a {
   hyphens: none;
 }
 
-/* 移动端：用 VH 占位符规避地址栏 */
+/* 桌面端：占满一屏 */
 .h-screen {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* 移动端：内容高度自适应，允许溢出 */
+@media (max-width: 768px) {
+  .h-screen {
+    min-height: auto;
+    height: auto;
+  }
 }
 
 /* ===== Buttons ===== */
@@ -135,5 +143,10 @@ body, p, h1, h2, h3, span, div, button, a {
     --text-lg: 1rem;
     --text-xl: 1.125rem;
     --text-2xl: 1.25rem;
+  }
+
+  /* 移动端所有 section 顶部对齐，防止内容溢出 */
+  .section {
+    justify-content: flex-start;
   }
 }

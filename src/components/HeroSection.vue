@@ -262,7 +262,8 @@ const navTo = inject('navigateTo', () => {})
 
 @media (max-width: 768px) {
   .hero {
-    padding: 4rem 1.25rem 2rem;
+    padding: 5rem 1.25rem 2rem;
+    justify-content: flex-start;
   }
 
   .hero-inner {

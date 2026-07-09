@@ -104,7 +104,8 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 1.25rem;
+    padding: 4rem 1.25rem 3rem;
+    justify-content: flex-start;
   }
 
   .edu-card {

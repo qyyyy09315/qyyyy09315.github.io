@@ -59,6 +59,7 @@ const setVH = () => {
 }
 
 const handleWheel = (e) => {
+  if (isMobile()) return
   if (isScrolling.value) {
     e.preventDefault()
     return
@@ -82,11 +83,15 @@ const handleKey = (e) => {
   }
 }
 
+const isMobile = () => window.innerWidth <= 768
+
 let touchStartY = 0
 const handleTouchStart = (e) => {
+  if (isMobile()) return
   touchStartY = e.touches[0].clientY
 }
 const handleTouchEnd = (e) => {
+  if (isMobile()) return
   const diff = touchStartY - e.changedTouches[0].clientY
   if (Math.abs(diff) > 50) {
     if (diff > 0) scrollTo(currentPage.value + 1)
@@ -117,7 +122,7 @@ onUnmounted(() => {
 <style scoped>
 .app {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .scroll-container {
@@ -129,5 +134,19 @@ onUnmounted(() => {
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
+}
+
+/* 移动端：让内容自然扩展，不强制 100vh 锁死 */
+@media (max-width: 768px) {
+  .scroll-container {
+    height: auto;
+    overflow: visible;
+  }
+
+  .full-page-section {
+    height: auto;
+    min-height: calc(var(--vh) * 100);
+    justify-content: flex-start;
+  }
 }
 </style>
