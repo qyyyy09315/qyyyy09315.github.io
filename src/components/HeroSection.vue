@@ -18,6 +18,10 @@
             数据科学与大数据技术
           </span>
         </div>
+        <p class="hero-quote">
+          步履轻踏破浩瀚，铁拳微舒碎苍寰<br>
+          <span class="quote-en">Particle or planet, it all shatters with enough force.</span>
+        </p>
         <div class="hero-actions">
           <button class="btn btn-primary" @click="navTo(4)">
             <span>联系我</span>
@@ -88,11 +92,16 @@ const navTo = inject('navigateTo', () => {})
 }
 
 .hero-title {
-  font-size: clamp(4rem, 9vw, 7rem);
+  font-family: 'Dancing Script', 'Brush Script MT', 'Segoe Script', 'Lucida Handwriting', cursive;
+  font-size: clamp(4.5rem, 10vw, 8rem);
   font-weight: 700;
-  letter-spacing: -.03em;
-  line-height: 1.05;
+  letter-spacing: -.02em;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #6366f1 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-tagline {
@@ -131,6 +140,28 @@ const navTo = inject('navigateTo', () => {})
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* Quote */
+.hero-quote {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-subtle);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  max-width: 520px;
+}
+
+.quote-en {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  display: block;
+  margin-top: .5rem;
+  letter-spacing: .02em;
 }
 
 /* Right visual */
