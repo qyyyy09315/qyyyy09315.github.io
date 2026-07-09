@@ -92,9 +92,9 @@ const navTo = inject('navigateTo', () => {})
 }
 
 .hero-title {
-  font-family: 'Dancing Script', 'Brush Script MT', 'Segoe Script', 'Lucida Handwriting', cursive;
-  font-size: clamp(4.5rem, 10vw, 8rem);
-  font-weight: 700;
+  font-family: 'Caveat', 'Brush Script MT', cursive;
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 600;
   letter-spacing: -.02em;
   line-height: 1.1;
   margin-bottom: 1.5rem;
