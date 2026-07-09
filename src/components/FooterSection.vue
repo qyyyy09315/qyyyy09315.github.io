@@ -1,30 +1,37 @@
 <template>
-  <section id="footer" class="footer-section">
-    <div class="content">
-      <div class="footer-inner">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <span class="footer-logo">Yue-xin G.</span>
-            <span class="footer-tagline">Building with data, learning with purpose.</span>
-          </div>
-          <div class="footer-nav">
-            <a
-              v-for="(link, idx) in navLinks"
-              :key="idx"
-              :href="link.href"
-              @click.prevent="goTo(link.index)"
-            >
-              {{ link.label }}
-            </a>
-          </div>
+  <section class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-info">
+          <h2 class="footer-title">Yue-xin G.</h2>
+          <p class="footer-tagline">
+            感谢阅读 · Thanks for scrolling
+          </p>
         </div>
 
-        <div class="footer-divider"></div>
-
-        <div class="footer-bottom">
-          <p class="footer-copy">&copy; {{ currentYear }} Yue-xin G. All rights reserved.</p>
-          <p class="footer-built">Built with Vue 3 + Vite</p>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4 class="footer-nav-label">Pages</h4>
+            <button class="footer-link" @click="goTo(0)">Home</button>
+            <button class="footer-link" @click="goTo(1)">About</button>
+            <button class="footer-link" @click="goTo(2)">Skills</button>
+            <button class="footer-link" @click="goTo(3)">Education</button>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-nav-label">Links</h4>
+            <a class="footer-link" href="https://github.com/qyyyy09315">GitHub</a>
+            <a class="footer-link" href="#">LinkedIn</a>
+            <a class="footer-link" href="mailto:contact@example.com">Email</a>
+          </div>
         </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">&copy; {{ currentYear }} Yue-xin G. · Built with Vue 3 + Vite</span>
+        <button class="footer-back" @click="goTo(0)">
+          Back to Top
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -35,111 +42,120 @@ import { ref, inject } from 'vue'
 
 const currentYear = ref(new Date().getFullYear())
 const goTo = inject('navigateTo', () => {})
-
-const navLinks = [
-  { label: 'About', href: '#about', index: 1 },
-  { label: 'Skills', href: '#skills', index: 2 },
-  { label: 'Education', href: '#education', index: 3 },
-  { label: 'Contact', href: '#contact', index: 4 }
-]
 </script>
 
 <style scoped>
-.footer-section {
+.footer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 2rem;
-  background: var(--text);
-  color: var(--bg);
+  padding: var(--space-24) var(--space-6);
+  background: #0a0a0a;
+  color: #fff;
 }
 
 .footer-inner {
-  max-width: 1120px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
 
 .footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #333;
 }
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-logo {
-  font-size: 1.5rem;
+.footer-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -.03em;
+  margin-bottom: 1rem;
 }
 
 .footer-tagline {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--text-xl);
+  color: #888;
 }
 
 .footer-nav {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
+  justify-content: flex-end;
 }
 
-.footer-nav a {
-  color: rgba(255, 255, 255, 0.5);
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.footer-nav-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #666;
+  margin-bottom: .5rem;
+}
+
+.footer-link {
+  font-size: var(--text-lg);
+  color: #ccc;
   text-decoration: none;
-  font-size: 0.875rem;
-  transition: color var(--duration-normal) var(--ease-out);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
-.footer-nav a:hover {
-  color: var(--bg);
-}
-
-.footer-divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 2rem;
+.footer-link:hover {
+  color: var(--accent);
 }
 
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-between;
+  padding-top: 2.5rem;
 }
 
-.footer-copy {
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.4);
+.footer-copyright {
+  font-size: var(--text-base);
+  color: #888;
 }
 
-.footer-built {
+.footer-back {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: var(--text-base);
+  color: #ccc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
-@media (max-width: 640px) {
+.footer-back:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
   .footer-top {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-
-  .footer-nav {
-    flex-wrap: wrap;
-    gap: 1rem 1.5rem;
-  }
-
+  .footer-nav { justify-content: flex-start; gap: 3rem; }
   .footer-bottom {
     flex-direction: column;
+    gap: 1.5rem;
     align-items: flex-start;
   }
 }

@@ -1,131 +1,121 @@
 <template>
-  <section id="about" class="section about-section">
+  <section id="about" class="section">
     <div class="content">
       <div class="section-header">
-        <span class="section-label">01 / About</span>
-        <h2 class="section-title">Who I Am</h2>
+        <div class="animate"><span class="section-label">01 / About</span></div>
+        <h2 class="section-title animate animate-delay-1">About Me</h2>
+        <p class="section-subtitle animate animate-delay-2">
+          关于我
+        </p>
       </div>
 
       <div class="about-grid">
-        <div class="card about-card">
+        <div class="card about-card animate animate-delay-2">
           <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 00-16 0"/></svg>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
           </div>
-          <div class="card-body">
-            <span class="card-label">Name</span>
-            <span class="card-value">Yue-xin G.</span>
+          <div class="card-text">
+            <span class="meta">Name</span>
+            <span class="value">Yue-xin G.</span>
           </div>
         </div>
 
-        <div class="card about-card">
+        <div class="card about-card animate animate-delay-3">
           <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
           </div>
-          <div class="card-body">
-            <span class="card-label">Location</span>
-            <span class="card-value">Dalian, China</span>
+          <div class="card-text">
+            <span class="meta">Location</span>
+            <span class="value">Dalian, China</span>
           </div>
         </div>
 
-        <div class="card about-card">
+        <div class="card about-card animate animate-delay-4">
           <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           </div>
-          <div class="card-body">
-            <span class="card-label">Major</span>
-            <span class="card-value">Big Data Science</span>
+          <div class="card-text">
+            <span class="meta">Major</span>
+            <span class="value">Big Data Science</span>
           </div>
         </div>
 
-        <div class="card about-card">
+        <div class="card about-card animate animate-delay-5">
           <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
-          <div class="card-body">
-            <span class="card-label">Interests</span>
-            <span class="card-value">ML · Data Science · Math Modeling</span>
+          <div class="card-text">
+            <span class="meta">Year</span>
+            <span class="value">2024 - 2028</span>
           </div>
         </div>
       </div>
 
-      <!-- Bio paragraph -->
-      <div class="about-bio">
-        <p>
-          I'm an undergraduate student passionate about transforming raw data into meaningful insights.
-          My curiosity lives at the intersection of statistics, algorithms, and elegant code —
-          building things that make sense of complex information.
-        </p>
-      </div>
+      <p class="about-bio animate animate-delay-6">
+        对机器学习和数据科学有浓厚兴趣，
+        专注于将统计方法与软件工程结合，
+        探索数据驱动的解决方案。
+      </p>
     </div>
   </section>
 </template>
 
 <style scoped>
-.about-section {
-  padding: 5rem 2rem;
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
 .about-card {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.25rem;
+  gap: 1.25rem;
 }
 
 .card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-subtle);
+  color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
   flex-shrink: 0;
 }
 
-.card-body {
+.card-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.card-label {
-  font-size: 0.6875rem;
+.card-text .meta {
+  font-size: var(--text-sm);
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
-.card-value {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--text);
+.card-text .value {
+  font-size: var(--text-lg);
+  font-weight: 600;
 }
 
 .about-bio {
-  max-width: var(--content-narrow);
-}
-
-.about-bio p {
-  font-size: 1.0625rem;
-  line-height: 1.8;
+  font-size: var(--text-lg);
   color: var(--text-secondary);
-  letter-spacing: -0.01em;
+  line-height: 1.8;
+  padding: 2rem;
+  background: var(--bg-subtle);
+  border-radius: 14px;
+  border-left: 4px solid var(--accent);
 }
 
-@media (max-width: 640px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
 }
 </style>
