@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="hero-overline">个人主页 · 2024</span>
+        <span class="hero-overline">个人主页 · 2023</span>
         <h1 class="hero-title">Yue-xin G.</h1>
         <p class="hero-tagline">
           大数据专业学生 · 数据科学方向学习者<br>

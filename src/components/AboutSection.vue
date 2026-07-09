@@ -46,7 +46,7 @@
           </div>
           <div class="card-text">
             <span class="meta">年级</span>
-            <span class="value">2024 级 · 本科</span>
+            <span class="value">2023 级 · 本科在读</span>
           </div>
         </div>
       </div>

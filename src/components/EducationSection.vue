@@ -11,14 +11,14 @@
 
       <div class="edu-timeline">
         <div class="edu-card card animate animate-delay-2">
-          <div class="edu-year">2024 — 2028</div>
+          <div class="edu-year">2023 — 2027</div>
           <h3 class="edu-school">大连海洋大学</h3>
-          <p class="edu-major">数据科学与大数据技术 · 本科</p>
+          <p class="edu-major">数据科学与大数据技术 · 本科在读</p>
         </div>
 
         <div class="edu-card card animate animate-delay-3">
-          <div class="edu-year">2021 — 2024</div>
-          <h3 class="edu-school">大连理工大学附属高级中学</h3>
+          <div class="edu-year">2020 — 2023</div>
+          <h3 class="edu-school">大连市第二十三高级中学</h3>
           <p class="edu-major">高中</p>
         </div>
       </div>
