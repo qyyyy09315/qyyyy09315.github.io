@@ -81,10 +81,6 @@ const labels = ['首页', '关于', '技能', '教育', '联系', '页脚']
 
 @media (max-width: 768px) {
   .page-indicator {
-    right: 1rem;
-    gap: 1rem;
-  }
-  .dot-label {
     display: none;
   }
 }

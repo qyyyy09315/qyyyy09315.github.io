@@ -47,22 +47,64 @@
 </template>
 
 <style scoped>
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-top: .5rem;
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .contact-card {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  padding: var(--space-8);
+  padding: 1.25rem;
 }
 
 .contact-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background: var(--accent-subtle);
   color: var(--accent);
@@ -85,6 +127,7 @@
   font-weight: 600;
   color: var(--text);
   text-decoration: none;
+  word-break: break-all;
 }
 
 .contact-value:hover {
@@ -92,6 +135,26 @@
 }
 
 @media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .contact-card {
+    padding: 1rem;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-value {
+    font-size: var(--text-base);
+  }
 }
 </style>

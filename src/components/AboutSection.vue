@@ -61,23 +61,66 @@
 </template>
 
 <style scoped>
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-top: .5rem;
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .about-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
+  padding: 1.25rem;
 }
 
 .card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
   background: var(--accent-subtle);
   color: var(--accent);
   display: flex;
@@ -109,13 +152,39 @@
   font-size: var(--text-lg);
   color: var(--text-secondary);
   line-height: 1.8;
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--bg-subtle);
-  border-radius: 14px;
+  border-radius: 12px;
   border-left: 4px solid var(--accent);
 }
 
 @media (max-width: 768px) {
-  .about-grid { grid-template-columns: 1fr; }
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-card {
+    padding: 1rem;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .card-text .value {
+    font-size: var(--text-base);
+  }
+
+  .about-bio {
+    padding: 1rem 1.25rem;
+    font-size: var(--text-base);
+  }
 }
 </style>

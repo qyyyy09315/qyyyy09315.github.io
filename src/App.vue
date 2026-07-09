@@ -7,7 +7,7 @@
         :key="section.id"
         :id="section.id"
         ref="sectionRefs"
-        class="full-page-section"
+        class="full-page-section h-screen"
       >
         <component :is="section.component" />
       </section>
@@ -52,6 +52,12 @@ const scrollTo = (index) => {
 
 provide('navigateTo', scrollTo)
 
+// 修复移动端 100vh 问题
+const setVH = () => {
+  const vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
+
 const handleWheel = (e) => {
   if (isScrolling.value) {
     e.preventDefault()
@@ -76,7 +82,6 @@ const handleKey = (e) => {
   }
 }
 
-// Touch support
 let touchStartY = 0
 const handleTouchStart = (e) => {
   touchStartY = e.touches[0].clientY
@@ -90,6 +95,9 @@ const handleTouchEnd = (e) => {
 }
 
 onMounted(() => {
+  setVH()
+  window.addEventListener('resize', setVH)
+  window.addEventListener('orientationchange', setVH)
   window.addEventListener('wheel', handleWheel, { passive: false })
   window.addEventListener('keydown', handleKey)
   window.addEventListener('touchstart', handleTouchStart, { passive: true })
@@ -97,6 +105,8 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  window.removeEventListener('resize', setVH)
+  window.removeEventListener('orientationchange', setVH)
   window.removeEventListener('wheel', handleWheel)
   window.removeEventListener('keydown', handleKey)
   window.removeEventListener('touchstart', handleTouchStart)
@@ -115,7 +125,6 @@ onUnmounted(() => {
 }
 
 .full-page-section {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

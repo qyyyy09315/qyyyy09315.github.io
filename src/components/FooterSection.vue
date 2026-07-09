@@ -46,11 +46,10 @@ const goTo = inject('navigateTo', () => {})
 
 <style scoped>
 .footer {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   background: #0a0a0a;
   color: #fff;
 }
@@ -65,7 +64,7 @@ const goTo = inject('navigateTo', () => {})
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   border-bottom: 1px solid #333;
 }
 
@@ -83,7 +82,7 @@ const goTo = inject('navigateTo', () => {})
 
 .footer-nav {
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   justify-content: flex-end;
 }
 
@@ -122,7 +121,7 @@ const goTo = inject('navigateTo', () => {})
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
 }
 
 .footer-copyright {
@@ -148,15 +147,29 @@ const goTo = inject('navigateTo', () => {})
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.25rem;
+  }
+
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
+    padding-bottom: 2rem;
   }
-  .footer-nav { justify-content: flex-start; gap: 3rem; }
+
+  .footer-nav {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
   .footer-bottom {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: flex-start;
+  }
+
+  .footer-link {
+    font-size: var(--text-base);
   }
 }
 </style>

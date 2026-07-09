@@ -68,17 +68,59 @@
 </template>
 
 <style scoped>
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-top: .5rem;
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .skill-card {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  padding: var(--space-8);
+  gap: 1rem;
+  padding: 1.25rem;
 }
 
 .skill-header {
@@ -88,7 +130,7 @@
 }
 
 .skill-icon {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .skill-category {
@@ -99,10 +141,38 @@
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .625rem;
+  gap: .5rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .25rem .75rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
 }
 
 @media (max-width: 768px) {
-  .skills-grid { grid-template-columns: 1fr; }
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-category {
+    font-size: var(--text-base);
+  }
 }
 </style>

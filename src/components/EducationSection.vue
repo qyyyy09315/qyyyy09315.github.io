@@ -27,18 +27,60 @@
 </template>
 
 <style scoped>
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-top: .5rem;
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
 .edu-timeline {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .edu-card {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 180px 1fr;
   gap: 1.5rem;
   align-items: center;
-  padding: var(--space-8);
+  padding: 1.5rem;
 }
 
 .edu-year {
@@ -50,20 +92,29 @@
 }
 
 .edu-school {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 700;
   margin-bottom: .25rem;
 }
 
 .edu-major {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
   .edu-card {
     grid-template-columns: 1fr;
     gap: .5rem;
+    padding: 1rem;
+  }
+
+  .edu-school {
+    font-size: var(--text-lg);
   }
 }
 </style>

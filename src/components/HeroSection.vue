@@ -62,7 +62,6 @@ const navTo = inject('navigateTo', () => {})
 
 <style scoped>
 .hero {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -262,16 +261,57 @@ const navTo = inject('navigateTo', () => {})
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.25rem 2rem;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2.5rem;
+    gap: 2rem;
   }
-  .hero-tagline { max-width: 100%; }
-  .hero-meta { justify-content: center; }
-  .hero-actions { justify-content: center; }
-  .hero-visual { order: -1; }
-  .avatar-frame { width: 150px; height: 150px; }
-  .avatar-mono { font-size: 2.25rem; }
+
+  .hero-title {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .hero-tagline {
+    max-width: 100%;
+    font-size: var(--text-base);
+  }
+
+  .hero-meta {
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-quote {
+    text-align: left;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: var(--text-base);
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .avatar-frame {
+    width: 130px;
+    height: 130px;
+  }
+
+  .avatar-mono {
+    font-size: 2rem;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
 }
 </style>
