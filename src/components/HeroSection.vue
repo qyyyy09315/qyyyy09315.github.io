@@ -1,35 +1,31 @@
 <template>
   <section class="hero">
     <div class="hero-inner">
+      <!-- 左侧文字 -->
       <div class="hero-content">
-        <span class="hero-overline">个人主页 · 2023</span>
+        <span class="hero-overline">个人主页 · 2023 级</span>
         <h1 class="hero-title">Yue-xin G.</h1>
-
-        <!-- Career Objective -->
-        <div class="hero-objective">
-          大数据专业方向，专注机器学习与数据工程交叉领域。扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践经验。寻求数据科学、机器学习方向的实习与工作机会。
-        </div>
-
         <p class="hero-tagline">
-          大数据专业学生 · 数据科学方向学习者<br>
-          专注于机器学习、统计分析与软件工程的交叉领域
+          数据科学与大数据技术 · 本科在读<br>
+          专注机器学习 × 数据工程 × 可视化
         </p>
+
         <div class="hero-meta">
-          <span class="meta-item">
-            <span class="meta-dot"></span>
-            辽宁大连
-          </span>
-          <span class="meta-item">
-            <span class="meta-dot"></span>
-            数据科学与大数据技术
-          </span>
+          <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
+          <span class="meta-item"><span class="meta-dot"></span>数据科学与大数据技术</span>
         </div>
-        <p class="hero-quote">
-          步履轻踏破浩瀚，铁拳微舒碎苍寰<br>
-          <span class="quote-en">Particle or planet, it all shatters with enough force.</span>
+
+        <p class="hero-objective">
+          扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践。寻求数据科学、机器学习方向实习与工作机会。
         </p>
+
+        <blockquote class="hero-quote">
+          步履轻踏破浩瀚，铁拳微舒碎苍寰
+          <span class="quote-en">Particle or planet — it all shatters with enough force.</span>
+        </blockquote>
+
         <div class="hero-actions">
-          <button class="btn btn-primary" @click="navTo(4)">
+          <button class="btn btn-primary" @click="navTo(5)">
             <span>联系我</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </button>
@@ -39,9 +35,10 @@
         </div>
       </div>
 
+      <!-- 右侧照片 -->
       <div class="hero-visual">
-        <div class="avatar-frame">
-          <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="avatar-img" />
+        <div class="photo-frame">
+          <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" />
         </div>
         <div class="hero-decor">
           <span class="decor-line"></span>
@@ -59,7 +56,6 @@
 
 <script setup>
 import { inject } from 'vue'
-
 const navTo = inject('navigateTo', () => {})
 </script>
 
@@ -67,7 +63,7 @@ const navTo = inject('navigateTo', () => {})
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 5rem 2rem 3rem;
   position: relative;
 }
@@ -77,73 +73,49 @@ const navTo = inject('navigateTo', () => {})
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding-top: 1rem;
 }
+
+/* ---- Left content ---- */
 
 .hero-overline {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: .1em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .hero-title {
-  font-family: 'Caveat', 'Brush Script MT', cursive;
-  font-size: clamp(4rem, 9vw, 7rem);
+  font-family: 'Caveat', 'Kalam', 'Brush Script MT', cursive;
+  font-size: clamp(3.5rem, 8vw, 6rem);
   font-weight: 600;
   letter-spacing: -.02em;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
   background: linear-gradient(135deg, var(--accent) 0%, #6366f1 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Career Objective */
-.hero-objective {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 500px;
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  background: var(--accent-subtle);
-  border-radius: 8px;
-  border-left: 3px solid var(--accent);
-}
-
-/* Quote */
-.hero-quote {
+.hero-tagline {
   font-size: var(--text-lg);
   color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem 2rem;
-  background: var(--bg-subtle);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-  max-width: 520px;
-}
-
-.hero-tagline {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  max-width: 500px;
-  margin-bottom: 2rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
 }
 
 .hero-meta {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
   flex-wrap: wrap;
 }
 
@@ -151,7 +123,7 @@ const navTo = inject('navigateTo', () => {})
   display: flex;
   align-items: center;
   gap: .5rem;
-  font-size: .9375rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 
@@ -162,12 +134,30 @@ const navTo = inject('navigateTo', () => {})
   background: #22c55e;
   display: inline-block;
   box-shadow: 0 0 6px rgba(34, 197, 94, .5);
+  flex-shrink: 0;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+.hero-objective {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  padding: .875rem 1.125rem;
+  background: var(--accent-subtle);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Quote */
+.hero-quote {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-subtle);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
 }
 
 .quote-en {
@@ -175,29 +165,36 @@ const navTo = inject('navigateTo', () => {})
   font-size: var(--text-sm);
   color: var(--text-muted);
   display: block;
-  margin-top: .5rem;
+  margin-top: .375rem;
   letter-spacing: .02em;
 }
 
-/* Right visual */
+.hero-actions {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Right visual — rectangular photo ---- */
+
 .hero-visual {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
-.avatar-frame {
+.photo-frame {
   position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
+  width: 260px;
+  height: 340px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 3px solid var(--accent-muted);
-  box-shadow: 0 0 32px rgba(37, 99, 235, .15);
+  border: 2px solid var(--accent-muted);
+  box-shadow: 0 8px 40px rgba(37, 99, 235, .12), 0 2px 12px rgba(0,0,0,.06);
 }
 
-.avatar-img {
+.photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -256,42 +253,45 @@ const navTo = inject('navigateTo', () => {})
   50% { opacity: 1; transform: scaleY(1); }
 }
 
+/* ---- Mobile ---- */
+
 @media (max-width: 768px) {
   .hero {
-    padding: 5rem 1.25rem 2rem;
+    padding: 4.5rem 1.25rem 2rem;
     justify-content: flex-start;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .hero-title {
-    font-size: clamp(3rem, 12vw, 5rem);
+    font-size: clamp(2.75rem, 11vw, 4.5rem);
   }
 
   .hero-tagline {
-    max-width: 100%;
-    font-size: var(--text-base);
-  }
-
-  .hero-objective {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  .hero-quote {
-    text-align: left;
-    padding: 1rem 1.25rem;
     font-size: var(--text-base);
   }
 
   .hero-meta {
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: .875rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-objective {
+    text-align: left;
+    font-size: var(--text-sm);
+    padding: .75rem 1rem;
+  }
+
+  .hero-quote {
+    text-align: left;
+    font-size: var(--text-sm);
+    padding: .875rem 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-actions {
@@ -302,13 +302,15 @@ const navTo = inject('navigateTo', () => {})
     order: -1;
   }
 
-  .avatar-frame {
-    width: 130px;
-    height: 130px;
+  .photo-frame {
+    width: 180px;
+    height: 240px;
+    border-radius: 16px;
   }
 
-  .scroll-hint {
-    display: none;
-  }
+  .decor-line { height: 36px; }
+  .decor-line.short { height: 24px; }
+
+  .scroll-hint { display: none; }
 }
 </style>
