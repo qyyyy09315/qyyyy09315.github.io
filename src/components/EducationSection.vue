@@ -2,7 +2,7 @@
   <section id="education" class="section">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">03 / 教育</span></div>
+        <div class="animate"><span class="section-label">04 / 教育</span></div>
         <h2 class="section-title animate animate-delay-1">教育背景</h2>
         <p class="section-subtitle animate animate-delay-2">
           学习经历
@@ -20,6 +20,18 @@
           <div class="edu-year">2020 — 2023</div>
           <h3 class="edu-school">大连市第二十三高级中学</h3>
           <p class="edu-major">高中</p>
+        </div>
+      </div>
+
+      <!-- 荣誉奖项 -->
+      <div class="awards-block">
+        <h3 class="awards-title animate animate-delay-4">荣誉奖项</h3>
+        <div class="award-item card animate animate-delay-5">
+          <div class="award-icon">🏆</div>
+          <div class="award-content">
+            <span class="award-name">大连海洋大学科技创新先进个人</span>
+            <span class="award-period">2024 — 2026 两年度</span>
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +112,54 @@
 .edu-major {
   font-size: var(--text-base);
   color: var(--text-secondary);
+}
+
+/* 荣誉奖项 */
+.awards-block {
+  margin-top: 2rem;
+}
+
+.awards-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 1rem;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+}
+
+.award-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.award-content {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.award-name {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #92400e;
+}
+
+.award-period {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: #b45309;
 }
 
 @media (max-width: 768px) {

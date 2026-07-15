@@ -23,6 +23,7 @@ import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
 import EducationSection from './components/EducationSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
@@ -32,6 +33,7 @@ const sections = shallowRef([
   { id: 'hero', component: HeroSection },
   { id: 'about', component: AboutSection },
   { id: 'skills', component: SkillsSection },
+  { id: 'projects', component: ProjectsSection },
   { id: 'education', component: EducationSection },
   { id: 'contact', component: ContactSection },
   { id: 'footer', component: FooterSection }

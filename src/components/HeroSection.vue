@@ -4,6 +4,12 @@
       <div class="hero-content">
         <span class="hero-overline">个人主页 · 2023</span>
         <h1 class="hero-title">Yue-xin G.</h1>
+
+        <!-- Career Objective -->
+        <div class="hero-objective">
+          大数据专业方向，专注机器学习与数据工程交叉领域。扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践经验。寻求数据科学、机器学习方向的实习与工作机会。
+        </div>
+
         <p class="hero-tagline">
           大数据专业学生 · 数据科学方向学习者<br>
           专注于机器学习、统计分析与软件工程的交叉领域
@@ -35,10 +41,7 @@
 
       <div class="hero-visual">
         <div class="avatar-frame">
-          <div class="avatar-gradient"></div>
-          <div class="avatar-content">
-            <span class="avatar-mono">&lt;/&gt;</span>
-          </div>
+          <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="avatar-img" />
         </div>
         <div class="hero-decor">
           <span class="decor-line"></span>
@@ -103,6 +106,32 @@ const navTo = inject('navigateTo', () => {})
   background-clip: text;
 }
 
+/* Career Objective */
+.hero-objective {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--accent-subtle);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Quote */
+.hero-quote {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-subtle);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  max-width: 520px;
+}
+
 .hero-tagline {
   font-size: 1.25rem;
   color: var(--text-secondary);
@@ -141,19 +170,6 @@ const navTo = inject('navigateTo', () => {})
   flex-wrap: wrap;
 }
 
-/* Quote */
-.hero-quote {
-  font-size: var(--text-lg);
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem 2rem;
-  background: var(--bg-subtle);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-  max-width: 520px;
-}
-
 .quote-en {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
@@ -175,37 +191,17 @@ const navTo = inject('navigateTo', () => {})
   position: relative;
   width: 220px;
   height: 220px;
-  border-radius: 24px;
+  border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 3px solid var(--accent-muted);
+  box-shadow: 0 0 32px rgba(37, 99, 235, .15);
 }
 
-.avatar-gradient {
-  position: absolute;
-  inset: 0;
-  background: conic-gradient(from 0deg, #eff6ff, #dbeafe, #bfdbfe, #93c5fd, #60a5fa, #3b82f6, #2563eb, #1d4ed8, #1e40af, #1e3a8a, #172554, #eff6ff);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  to { transform: rotate(360deg); }
-}
-
-.avatar-content {
-  position: absolute;
-  inset: 4px;
-  background: var(--bg);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar-mono {
-  font-family: var(--font-mono);
-  font-size: 3.5rem;
-  color: var(--accent);
-  font-weight: 500;
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-decor {
@@ -281,17 +277,21 @@ const navTo = inject('navigateTo', () => {})
     font-size: var(--text-base);
   }
 
-  .hero-meta {
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+  .hero-objective {
+    max-width: 100%;
+    text-align: left;
   }
 
   .hero-quote {
     text-align: left;
     padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
     font-size: var(--text-base);
+  }
+
+  .hero-meta {
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-actions {
@@ -305,10 +305,6 @@ const navTo = inject('navigateTo', () => {})
   .avatar-frame {
     width: 130px;
     height: 130px;
-  }
-
-  .avatar-mono {
-    font-size: 2rem;
   }
 
   .scroll-hint {

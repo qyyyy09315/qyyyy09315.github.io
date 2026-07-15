@@ -5,61 +5,105 @@
         <div class="animate"><span class="section-label">02 / 技能</span></div>
         <h2 class="section-title animate animate-delay-1">专业技能</h2>
         <p class="section-subtitle animate animate-delay-2">
-          技术栈与工具
+          技术栈与工具 · 熟练度自评
         </p>
       </div>
 
       <div class="skills-grid">
+        <!-- 进度条区 -->
         <div class="card skill-card animate animate-delay-2">
-          <div class="skill-header">
-            <span class="skill-icon">💻</span>
-            <span class="skill-category">编程语言</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Java</span>
+          <div class="skill-category">编程基础</div>
+          <div class="skill-bars">
+            <div class="skill-bar-row">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">SQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">R</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">TypeScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="card skill-card animate animate-delay-3">
-          <div class="skill-header">
-            <span class="skill-icon">🤖</span>
-            <span class="skill-category">机器学习</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
+          <div class="skill-category">机器学习</div>
+          <div class="skill-bars">
+            <div class="skill-bar-row">
+              <span class="skill-name">Scikit-learn</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">PyTorch</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Pandas</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">NumPy</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">TensorFlow</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="card skill-card animate animate-delay-4">
-          <div class="skill-header">
-            <span class="skill-icon">📊</span>
-            <span class="skill-category">数据分析</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Seaborn</span>
-            <span class="tag">Hadoop</span>
-            <span class="tag">Spark</span>
+          <div class="skill-category">数据分析 / 可视化</div>
+          <div class="skill-bars">
+            <div class="skill-bar-row">
+              <span class="skill-name">Matplotlib</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Seaborn</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Hadoop</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Spark</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="card skill-card animate animate-delay-5">
-          <div class="skill-header">
-            <span class="skill-icon">🛠️</span>
-            <span class="skill-category">开发工具</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Git</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Docker</span>
-            <span class="tag">VS Code</span>
+          <div class="skill-category">开发工具</div>
+          <div class="skill-bars">
+            <div class="skill-bar-row">
+              <span class="skill-name">Git</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Linux</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">Docker</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+            </div>
+            <div class="skill-bar-row">
+              <span class="skill-name">VS Code</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -81,9 +125,7 @@
   margin: 0 auto;
 }
 
-.section-header {
-  margin-bottom: 2.5rem;
-}
+.section-header { margin-bottom: 2.5rem; }
 
 .section-label {
   font-family: var(--font-mono);
@@ -123,57 +165,62 @@
   padding: 1.25rem;
 }
 
-.skill-header {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-}
-
-.skill-icon {
-  font-size: 1.25rem;
-}
-
 .skill-category {
   font-size: var(--text-lg);
   font-weight: 600;
 }
 
-.skill-tags {
+.skill-bars {
   display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
+  flex-direction: column;
+  gap: .625rem;
 }
 
-.tag {
-  display: inline-flex;
+.skill-bar-row {
+  display: flex;
   align-items: center;
-  padding: .25rem .75rem;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-secondary);
+  gap: .75rem;
+}
+
+.skill-name {
   font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #6366f1);
+  border-radius: 999px;
+  transition: width .6s var(--ease-out);
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 4rem 1.25rem 3rem;
-    justify-content: flex-start;
-  }
+  .section { padding: 4rem 1.25rem 3rem; justify-content: flex-start; }
 
   .skills-grid {
     grid-template-columns: 1fr;
     gap: .75rem;
   }
 
-  .skill-card {
-    padding: 1rem;
-  }
+  .skill-card { padding: 1rem; }
 
-  .skill-category {
-    font-size: var(--text-base);
-  }
+  .skill-category { font-size: var(--text-base); }
+
+  .skill-bar-row { gap: .5rem; }
+
+  .skill-name { min-width: 70px; font-size: var(--text-xs); }
+
+  .skill-bar { height: 5px; }
 }
 </style>

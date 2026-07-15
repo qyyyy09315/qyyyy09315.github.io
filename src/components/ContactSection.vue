@@ -2,7 +2,7 @@
   <section id="contact" class="section">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">04 / 联系</span></div>
+        <div class="animate"><span class="section-label">05 / 联系</span></div>
         <h2 class="section-title animate animate-delay-1">联系方式</h2>
         <p class="section-subtitle animate animate-delay-2">
           欢迎通过以下方式联系
