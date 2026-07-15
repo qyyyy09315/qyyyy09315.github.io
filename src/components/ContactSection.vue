@@ -9,15 +9,50 @@
         </p>
       </div>
 
-      <div class="contact-grid">
-        <div class="card contact-card animate animate-delay-2">
-          <div class="contact-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+      <!-- 邮箱区：三个邮箱单独展示 -->
+      <div class="emails-grid">
+        <div class="card email-card animate animate-delay-2">
+          <div class="email-header">
+            <div class="contact-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="email-info">
+              <span class="email-type">工作 / 业务</span>
+              <a href="mailto:gengyuexin@qq.com" class="email-addr">gengyuexin@qq.com</a>
+            </div>
           </div>
-          <span class="contact-label">邮箱</span>
-          <a href="mailto:contact@example.com" class="contact-value">contact@example.com</a>
+          <span class="email-note">业务合作 / 工作机会</span>
         </div>
 
+        <div class="card email-card animate animate-delay-3">
+          <div class="email-header">
+            <div class="contact-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="email-info">
+              <span class="email-type">日常</span>
+              <a href="mailto:ykshboy@163.com" class="email-addr">ykshboy@163.com</a>
+            </div>
+          </div>
+          <span class="email-note">日常使用，不经常查看</span>
+        </div>
+
+        <div class="card email-card animate animate-delay-4">
+          <div class="email-header">
+            <div class="contact-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="email-info">
+              <span class="email-type">Agent</span>
+              <a href="mailto:qyyyy09315@agent.qq.com" class="email-addr">qyyyy09315@agent.qq.com</a>
+            </div>
+          </div>
+          <span class="email-note">每天查看，日常使用</span>
+        </div>
+      </div>
+
+      <!-- 其他联系方式 -->
+      <div class="contact-grid">
         <div class="card contact-card animate animate-delay-3">
           <div class="contact-icon">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 10-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
@@ -89,9 +124,63 @@
   font-weight: 400;
 }
 
+/* Emails grid */
+.emails-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.email-card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding: 1.25rem;
+}
+
+.email-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.email-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.email-type {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.email-addr {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.email-addr:hover {
+  color: var(--accent);
+}
+
+.email-note {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  padding-left: 2.75rem; /* align with email address */
+}
+
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -138,6 +227,20 @@
   .section {
     padding: 4rem 1.25rem 3rem;
     justify-content: flex-start;
+  }
+
+  .emails-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .email-card {
+    padding: 1rem;
+  }
+
+  .email-note {
+    padding-left: 0;
   }
 
   .contact-grid {
