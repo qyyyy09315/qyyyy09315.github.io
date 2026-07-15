@@ -1,37 +1,22 @@
 <template>
   <section class="footer">
     <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-info">
-          <h2 class="footer-title">Yue-xin G.</h2>
-          <p class="footer-tagline">
-            感谢阅读 · Thanks for scrolling
-          </p>
-        </div>
-
-        <div class="footer-nav">
-          <div class="footer-col">
-            <h4 class="footer-nav-label">页面</h4>
-            <button class="footer-link" @click="goTo(0)">首页</button>
-            <button class="footer-link" @click="goTo(1)">关于</button>
-            <button class="footer-link" @click="goTo(2)">技能</button>
-            <button class="footer-link" @click="goTo(3)">教育</button>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-nav-label">链接</h4>
-            <a class="footer-link" href="https://github.com/qyyyy09315">GitHub</a>
-            <a class="footer-link" href="#">LinkedIn</a>
-            <a class="footer-link" href="mailto:contact@example.com">邮箱</a>
-          </div>
-        </div>
+      <div class="footer-left">
+        <h2 class="footer-title">Yue-xin G.</h2>
+        <p class="footer-tagline">大数据方向 · 本科在读</p>
       </div>
 
-      <div class="footer-bottom">
-        <span class="footer-copyright">&copy; {{ currentYear }} Yue-xin G. · 基于 Vue 3 + Vite 构建</span>
-        <button class="footer-back" @click="goTo(0)">
-          返回顶部
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </button>
+      <button class="footer-back" @click="goTo(0)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        返回顶部
+      </button>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copyright">&copy; {{ currentYer }} Yue-xin G · 基于 Vue 3 + Vite</span>
+      <div class="footer-links">
+        <a href="https://github.com/qyyyy09315">GitHub</a>
+        <a href="mailto:gengyuexin@qq.com">邮箱</a>
       </div>
     </div>
   </section>
@@ -49,128 +34,96 @@ const goTo = inject('navigateTo', () => {})
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 2rem;
-  background: #0a0a0a;
-  color: #fff;
+  padding: 4rem 2rem 2rem;
+  background: var(--text);
+  color: var(--bg);
 }
 
 .footer-inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .footer-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -.03em;
-  margin-bottom: 1rem;
-}
-
-.footer-tagline {
-  font-size: var(--text-xl);
-  color: #888;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 3rem;
-  justify-content: flex-end;
-}
-
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
-}
-
-.footer-nav-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #666;
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
   margin-bottom: .5rem;
 }
 
-.footer-link {
-  font-size: var(--text-lg);
-  color: #ccc;
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  padding: 0;
-  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.footer-link:hover {
-  color: var(--accent);
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 2rem;
-}
-
-.footer-copyright {
+.footer-tagline {
   font-size: var(--text-base);
-  color: #888;
+  color: var(--text-muted);
 }
 
 .footer-back {
   font-family: var(--font-mono);
-  font-size: var(--text-base);
-  color: #ccc;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
   background: none;
   border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
 .footer-back:hover {
   color: var(--accent);
 }
 
+.footer-bottom {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+.footer-copyright {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 768px) {
-  .footer {
-    padding: 4rem 1.25rem 3rem;
-    justify-content: flex-start;
-  }
+  .footer { padding: 3rem 1.25rem 2rem; justify-content: flex-start; }
 
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .footer-nav {
-    justify-content: flex-start;
-    gap: 2rem;
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
-  }
-
-  .footer-link {
-    font-size: var(--text-base);
   }
 }
 </style>

@@ -99,10 +99,7 @@ const navTo = inject('navigateTo', () => {})
   letter-spacing: -.02em;
   line-height: 1.05;
   margin-bottom: 1.25rem;
-  background: linear-gradient(135deg, var(--accent) 0%, #6366f1 50%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
 .hero-tagline {
@@ -145,7 +142,6 @@ const navTo = inject('navigateTo', () => {})
   padding: .875rem 1.125rem;
   background: var(--accent-subtle);
   border-radius: 8px;
-  border-left: 3px solid var(--accent);
 }
 
 /* Quote */
@@ -157,7 +153,6 @@ const navTo = inject('navigateTo', () => {})
   padding: 1rem 1.25rem;
   background: var(--bg-subtle);
   border-radius: 10px;
-  border-left: 3px solid var(--accent);
 }
 
 .quote-en {

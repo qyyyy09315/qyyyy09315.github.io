@@ -1,33 +1,29 @@
 <template>
-  <section id="education" class="section">
+  <section class="section" id="education">
     <div class="content">
       <div class="section-header">
-        <div class="animate"><span class="section-label">04 / 教育</span></div>
-        <h2 class="section-title animate animate-delay-1">教育背景</h2>
-        <p class="section-subtitle animate animate-delay-2">
-          学习经历
-        </p>
+        <h2 class="section-title">教育与荣誉</h2>
       </div>
 
       <div class="edu-timeline">
-        <div class="edu-card card animate animate-delay-2">
+        <div class="edu-card">
           <div class="edu-year">2023 — 2027</div>
           <h3 class="edu-school">大连海洋大学</h3>
           <p class="edu-major">数据科学与大数据技术 · 本科在读</p>
         </div>
 
-        <div class="edu-card card animate animate-delay-3">
+        <div class="edu-card">
           <div class="edu-year">2020 — 2023</div>
           <h3 class="edu-school">大连市第二十三高级中学</h3>
           <p class="edu-major">高中</p>
         </div>
       </div>
 
-      <!-- 荣誉奖项 -->
       <div class="awards-block">
-        <h3 class="awards-title animate animate-delay-4">荣誉奖项</h3>
-        <div class="award-item card animate animate-delay-5">
-          <div class="award-icon">🏆</div>
+        <div class="award-item">
+          <div class="award-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
           <div class="award-content">
             <span class="award-name">大连海洋大学科技创新先进个人</span>
             <span class="award-period">2024 — 2026 两年度</span>
@@ -43,48 +39,31 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .content {
-  max-width: 1200px;
+  max-width: 720px;
   width: 100%;
   margin: 0 auto;
 }
 
 .section-header {
-  margin-bottom: 2.5rem;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: .5rem;
-  display: block;
+  margin-bottom: 2rem;
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: -.03em;
-  line-height: 1.15;
-}
-
-.section-subtitle {
-  color: var(--text-secondary);
-  margin-top: .5rem;
-  font-size: var(--text-lg);
-  font-weight: 400;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  line-height: 1.2;
 }
 
 .edu-timeline {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .edu-card {
@@ -92,20 +71,22 @@
   grid-template-columns: 180px 1fr;
   gap: 1.5rem;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.25rem;
+  background: var(--bg-subtle);
+  border-radius: 10px;
 }
 
 .edu-year {
   font-family: var(--font-mono);
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--accent);
   letter-spacing: -.02em;
 }
 
 .edu-school {
-  font-size: var(--text-xl);
-  font-weight: 700;
+  font-size: var(--text-lg);
+  font-weight: 600;
   margin-bottom: .25rem;
 }
 
@@ -114,19 +95,8 @@
   color: var(--text-secondary);
 }
 
-/* 荣誉奖项 */
 .awards-block {
   margin-top: 2rem;
-}
-
-.awards-title {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 1rem;
 }
 
 .award-item {
@@ -134,13 +104,13 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  background: linear-gradient(135deg, #fefce8, #fef3c7);
   border: 1px solid #fde68a;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .award-icon {
-  font-size: 1.75rem;
+  color: #b45309;
   flex-shrink: 0;
 }
 
@@ -151,7 +121,7 @@
 }
 
 .award-name {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 600;
   color: #92400e;
 }
@@ -163,10 +133,7 @@
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 4rem 1.25rem 3rem;
-    justify-content: flex-start;
-  }
+  .section { padding: 3rem 1.25rem; justify-content: flex-start; }
 
   .edu-card {
     grid-template-columns: 1fr;
@@ -174,8 +141,8 @@
     padding: 1rem;
   }
 
-  .edu-school {
-    font-size: var(--text-lg);
+  .award-item {
+    padding: 1rem;
   }
 }
 </style>

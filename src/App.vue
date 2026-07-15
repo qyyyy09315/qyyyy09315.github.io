@@ -1,18 +1,17 @@
 <template>
   <div class="app">
     <NavBar :current-section="currentPage" @navigate="scrollTo" />
-    <main class="scroll-container" ref="container">
+    <main class="scroll-container">
       <section
         v-for="(section, index) in sections"
         :key="section.id"
         :id="section.id"
         ref="sectionRefs"
-        class="full-page-section h-screen"
+        class="full-page-section"
       >
         <component :is="section.component" />
       </section>
     </main>
-    <PageIndicator :total="sections.length" :current="currentPage" @select="scrollTo" />
   </div>
 </template>
 
@@ -27,7 +26,6 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import EducationSection from './components/EducationSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
-import PageIndicator from './components/PageIndicator.vue'
 
 const sections = shallowRef([
   { id: 'hero', component: HeroSection },
@@ -135,6 +133,8 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   scroll-snap-align: start;
 }
 
@@ -149,6 +149,11 @@ onUnmounted(() => {
     height: auto;
     min-height: calc(var(--vh) * 100);
     justify-content: flex-start;
+  }
+
+  /* Hero 在移动端无需 min-height 限制 */
+  .full-page-section:first-child {
+    min-height: auto;
   }
 }
 </style>
