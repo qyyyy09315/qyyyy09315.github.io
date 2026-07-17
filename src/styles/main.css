@@ -62,7 +62,6 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
-  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -192,19 +191,17 @@ body, p, h1, h2, h3, span, div, button, a {
 
 /* ===== Decorative Elements ===== */
 
-/* Floating blob - optimized for GPU */
+/* Floating blob - GPU-optimized, no filter during animation */
 .decor-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(50px);
-  opacity: 0.4;
+  filter: blur(30px);
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
-  animation: blobFloat 15s ease-in-out infinite;
+  animation: blobFloat 20s ease-in-out infinite;
   will-change: transform;
-  /* Promote to own layer */
   transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 .decor-blob--primary {
@@ -278,19 +275,17 @@ body, p, h1, h2, h3, span, div, button, a {
   66% { transform: translateY(16px) rotate(240deg); }
 }
 
-/* Subtle grid pattern overlay */
+/* Subtle grid pattern overlay - simplified, no mask */
 .decor-grid {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.04;
+  opacity: 0.03;
   background-image:
     linear-gradient(var(--text) 1px, transparent 1px),
     linear-gradient(90deg, var(--text) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
 }
 
 /* Section transition indicator */

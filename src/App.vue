@@ -38,49 +38,18 @@ const sections = shallowRef([
 ])
 
 const currentPage = ref(0)
-const isScrolling = ref(false)
 const sectionRefs = ref([])
 const scrollContainer = ref(null)
 
-// Custom smooth scroll using requestAnimationFrame
-const smoothScrollTo = (targetY, duration = 600) => {
-  const startY = window.scrollY
-  const distance = targetY - startY
-  const startTime = performance.now()
-
-  const animate = (currentTime) => {
-    const elapsed = currentTime - startTime
-    const progress = Math.min(elapsed / duration, 1)
-    // Ease out cubic
-    const ease = 1 - Math.pow(1 - progress, 3)
-    
-    window.scrollTo(0, startY + distance * ease)
-    
-    if (progress < 1) {
-      requestAnimationFrame(animate)
-    } else {
-      isScrolling.value = false
-    }
-  }
-
-  requestAnimationFrame(animate)
-}
-
+// Scroll to section using native smooth scroll
 const scrollTo = (index) => {
-  if (index < 0 || index >= sections.value.length || isScrolling.value) return
-  isScrolling.value = true
+  if (index < 0 || index >= sections.value.length) return
   currentPage.value = index
   
-  nextTick(() => {
-    const target = sectionRefs.value[index]
-    if (target) {
-      const rect = target.getBoundingClientRect()
-      const targetY = window.scrollY + rect.top
-      smoothScrollTo(targetY, 600)
-    } else {
-      isScrolling.value = false
-    }
-  })
+  const target = sectionRefs.value[index]
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' })
+  }
 }
 
 provide('navigateTo', scrollTo)
@@ -90,29 +59,8 @@ const setVH = () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
-// Throttled wheel handler
-let wheelTimeout = null
-const handleWheel = (e) => {
-  if (isMobile()) return
-  e.preventDefault()
-  
-  if (wheelTimeout) return
-  
-  wheelTimeout = setTimeout(() => {
-    wheelTimeout = null
-  }, 800)
-  
-  if (isScrolling.value) return
-  
-  if (e.deltaY > 0) {
-    scrollTo(currentPage.value + 1)
-  } else if (e.deltaY < 0) {
-    scrollTo(currentPage.value - 1)
-  }
-}
-
+// Keyboard navigation
 const handleKey = (e) => {
-  if (isScrolling.value) return
   if (e.key === 'ArrowDown' || e.key === 'PageDown') {
     e.preventDefault()
     scrollTo(currentPage.value + 1)
@@ -124,6 +72,7 @@ const handleKey = (e) => {
 
 const isMobile = () => window.innerWidth <= 768
 
+// Touch swipe navigation
 let touchStartY = 0
 const handleTouchStart = (e) => {
   if (isMobile()) return
@@ -145,7 +94,6 @@ onMounted(() => {
   setVH()
   window.addEventListener('resize', setVH)
   window.addEventListener('orientationchange', setVH)
-  window.addEventListener('wheel', handleWheel, { passive: false })
   window.addEventListener('keydown', handleKey)
   window.addEventListener('touchstart', handleTouchStart, { passive: true })
   window.addEventListener('touchend', handleTouchEnd, { passive: true })
@@ -174,7 +122,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', setVH)
   window.removeEventListener('orientationchange', setVH)
-  window.removeEventListener('wheel', handleWheel)
   window.removeEventListener('keydown', handleKey)
   window.removeEventListener('touchstart', handleTouchStart)
   window.removeEventListener('touchend', handleTouchEnd)
@@ -190,9 +137,8 @@ onUnmounted(() => {
 
 .scroll-container {
   width: 100%;
-  /* CSS scroll snap - GPU accelerated */
+  /* CSS scroll snap for section-by-section scrolling */
   scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
   overflow-y: scroll;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -205,9 +151,6 @@ onUnmounted(() => {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
   scroll-snap-align: start;
-  /* GPU acceleration for sections */
-  will-change: transform;
-  contain: layout style paint;
 }
 
 @media (max-width: 768px) {
@@ -215,7 +158,6 @@ onUnmounted(() => {
     height: auto;
     overflow: visible;
     scroll-snap-type: none;
-    scroll-behavior: auto;
   }
 
   .full-page-section {
