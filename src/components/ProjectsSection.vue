@@ -9,13 +9,13 @@
       <div
         class="section-header"
         v-motion
-        :initial="{ opacity: 0, y: 35 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 18 } }"
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, ease: 'easeOut' } }"
       >
         <h2 class="section-title">个人 / 合作项目</h2>
       </div>
 
-      <div class="projects-grid" v-auto-animate="{ duration: 500, easing: 'ease-out' }">
+      <div class="projects-grid">
         <a
           v-for="(p, i) in repos"
           :key="p.name"
@@ -23,8 +23,8 @@
           target="_blank"
           class="card project-card"
           v-motion
-          :initial="{ opacity: 0, y: 35, scale: 0.95 }"
-          :visible-once="{ opacity: 1, y: 0, scale: 1, transition: { delay: 150 + i * 80, duration: 500, ease: 'easeOut' } }"
+          :initial="{ opacity: 0, y: 25 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 100 + i * 50, duration: 400, ease: 'easeOut' } }"
         >
           <div class="project-head">
             <svg class="project-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.04 5.04 0 0020 4.77 5.06 5.06 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.06 5.06 0 005 4.77a5.04 5.04 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
@@ -116,11 +116,11 @@ const repos = [
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-medium);
 }
 

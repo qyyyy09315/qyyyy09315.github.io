@@ -13,7 +13,7 @@
         class="section-header"
         v-motion
         :initial="{ opacity: 0, y: 35 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 18 } }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, ease: 'easeOut' } }"
       >
         <h2 class="section-title">关于</h2>
       </div>
@@ -23,7 +23,7 @@
         class="about-opening"
         v-motion
         :initial="{ opacity: 0, y: 28 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        :visible-once="{ opacity: 1, y: 0, transition: { delay: 100, duration: 500, ease: 'easeOut' } }"
       >
         <p class="about-lead">
           数据科学与大数据技术专业本科在读，研究方向为<span class="highlight">机器学习理论</span>、<span class="highlight">深度学习应用</span>、<span class="highlight">最优化方法</span>。
@@ -36,8 +36,8 @@
         <div
           class="about-card focus-card"
           v-motion
-          :initial="{ opacity: 0, x: -30 }"
-          :visible-once="{ opacity: 1, x: 0, transition: { delay: 250, duration: 500, ease: 'easeOut' } }"
+          :initial="{ opacity: 0, x: -25 }"
+          :visible-once="{ opacity: 1, x: 0, transition: { delay: 200, duration: 450, ease: 'easeOut' } }"
         >
           <div class="card-header">
             <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -67,8 +67,8 @@
         <div
           class="about-card beyond-card"
           v-motion
-          :initial="{ opacity: 0, x: 30 }"
-          :visible-once="{ opacity: 1, x: 0, transition: { delay: 350, duration: 500, ease: 'easeOut' } }"
+          :initial="{ opacity: 0, x: 25 }"
+          :visible-once="{ opacity: 1, x: 0, transition: { delay: 300, duration: 450, ease: 'easeOut' } }"
         >
           <div class="card-header">
             <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>

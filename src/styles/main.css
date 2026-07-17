@@ -39,12 +39,12 @@
   --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
 
-  /* Type sizes */
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
+  /* Type sizes (upscaled for readability) */
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 1.875rem;
 
   /* Layout */
   --content-max: 1200px;
@@ -167,11 +167,11 @@ body, p, h1, h2, h3, span, div, button, a {
 /* 桌面端 content */
 @media (min-width: 769px) {
   :root {
-    --text-sm: 0.9375rem;
-    --text-base: 1.125rem;
-    --text-lg: 1.375rem;
-    --text-xl: 1.625rem;
-    --text-2xl: 2.25rem;
+    --text-sm: 1.125rem;
+    --text-base: 1.25rem;
+    --text-lg: 1.625rem;
+    --text-xl: 2rem;
+    --text-2xl: 2.5rem;
   }
 }
 
@@ -226,6 +226,11 @@ body, p, h1, h2, h3, span, div, button, a {
 .decor-blob--indigo {
   background: radial-gradient(circle, var(--accent-indigo) 0%, transparent 70%);
   animation-delay: -6s;
+}
+
+.decor-blob--accent {
+  background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);
+  animation-delay: -3s;
 }
 
 @keyframes blobFloat {

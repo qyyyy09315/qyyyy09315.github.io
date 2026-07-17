@@ -86,7 +86,7 @@
         :visible-once="{ opacity: 1, scale: 1, rotate: 0, transition: { delay: 500, type: 'spring', stiffness: 70, damping: 16 } }"
       >
         <div class="photo-frame">
-          <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" />
+          <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" loading="lazy" decoding="async" />
         </div>
         <div class="hero-decor">
           <span class="decor-line"></span>
