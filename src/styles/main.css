@@ -1,33 +1,52 @@
 :root {
-  --bg: #fbfbfa;
-  --bg-subtle: #f5f5f4;
+  /* === Hum Theme · Warm Playful === */
+  --bg: #f7f4ed;
+  --bg-subtle: #f0ece3;
   --bg-elevated: #ffffff;
-  --text: #1a1a19;
-  --text-secondary: #575551;
-  --text-muted: #9e9c97;
-  --accent: #2563eb;
-  --accent-subtle: #eff5ff;
-  --accent-muted: #c8dcfa;
-  --border: #e7e5e2;
-  --border-subtle: #f3f2f0;
+  --text: #151515;
+  --text-secondary: #6b6b66;
+  --text-muted: #9c9a92;
 
+  /* Multi-accent palette */
+  --accent: #e8a838;
+  --accent-dark: #c88a20;
+  --accent-subtle: rgba(232, 168, 56, 0.08);
+  --accent-muted: rgba(232, 168, 56, 0.15);
+
+  /* Secondary accents */
+  --accent-cyan: #3b82f6;
+  --accent-coral: #ef6f5e;
+  --accent-mint: #4ade80;
+
+  /* Borders */
+  --border: #e0dbd1;
+  --border-subtle: #ece8df;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 24px -8px rgba(21, 21, 21, 0.08);
+  --shadow-medium: 0 12px 32px -12px rgba(21, 21, 21, 0.10);
+
+  /* Font */
   --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
 
+  /* Type sizes */
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
 
+  /* Layout */
   --content-max: 1200px;
 
+  /* Easing */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-slow: 400ms;
 
-  /* 移动端安全高度变量 */
+  /* Mobile vh */
   --vh: 1vh;
 }
 
@@ -83,7 +102,7 @@ body, p, h1, h2, h3, span, div, button, a {
   font-weight: 500;
   padding: .625rem 1.5rem;
   border: 0;
-  border-radius: 8px;
+  border-radius: 999px;
   cursor: pointer;
   transition: background var(--duration-fast) var(--ease-out),
               color var(--duration-fast) var(--ease-out),
@@ -97,13 +116,18 @@ body, p, h1, h2, h3, span, div, button, a {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, .25);
+  color: var(--text);
+  box-shadow: 0 4px 0 0 var(--accent-dark), 0 6px 12px -3px rgba(232, 168, 56, 0.35);
 }
 .btn-primary:hover {
-  background: #1d4ed8;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, .35);
-  transform: translateY(-1px);
+  background: var(--accent-dark);
+  box-shadow: 0 6px 0 0 var(--accent-dark), 0 12px 22px -4px rgba(232, 168, 56, 0.4);
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 var(--accent-dark), 0 2px 6px -2px rgba(232, 168, 56, 0.3);
+  transition-duration: 70ms;
 }
 
 .btn-secondary {
@@ -118,11 +142,18 @@ body, p, h1, h2, h3, span, div, button, a {
 }
 .btn-secondary:active { background: var(--border-subtle); }
 
-::selection { background: var(--accent-muted); color: var(--accent); }
+::selection { background: var(--accent-muted); color: var(--text); }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Focus visible */
+:focus-visible {
+  outline: 3px solid var(--accent-cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 /* 桌面端 content */
 @media (min-width: 769px) {
@@ -148,5 +179,129 @@ body, p, h1, h2, h3, span, div, button, a {
   /* 移动端所有 section 顶部对齐，防止内容溢出 */
   .section {
     justify-content: flex-start;
+  }
+}
+
+/* ===== Decorative Elements (for motion-enhanced sections) ===== */
+
+/* Floating blob */
+.decor-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  animation: blobFloat 12s ease-in-out infinite;
+}
+
+.decor-blob--yellow {
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+}
+
+.decor-blob--cyan {
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  animation-delay: -4s;
+}
+
+.decor-blob--coral {
+  background: radial-gradient(circle, var(--accent-coral) 0%, transparent 70%);
+  animation-delay: -8s;
+}
+
+.decor-blob--mint {
+  background: radial-gradient(circle, var(--accent-mint) 0%, transparent 70%);
+  animation-delay: -2s;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(16px, -20px) scale(1.08); }
+  50% { transform: translate(-12px, 12px) scale(0.95); }
+  75% { transform: translate(8px, 18px) scale(1.04); }
+}
+
+/* Floating geometric shapes */
+.decor-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  animation: shapeDrift 18s ease-in-out infinite;
+}
+
+.decor-shape--ring {
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+
+.decor-shape--dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-coral);
+  border-radius: 50%;
+}
+
+.decor-shape--cross {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--accent-cyan);
+  transform: rotate(45deg);
+}
+
+@keyframes shapeDrift {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-24px) rotate(120deg); }
+  66% { transform: translateY(16px) rotate(240deg); }
+}
+
+/* Subtle grid pattern overlay */
+.decor-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(var(--text) 1px, transparent 1px),
+    linear-gradient(90deg, var(--text) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+}
+
+/* Section transition indicator */
+.section-divider {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  pointer-events: none;
+}
+
+/* Skill bar fill animation on reveal */
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-coral));
+  border-radius: 999px;
+}
+
+/* ===== Reduce motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .scroll-line {
+    transition-duration: 0ms;
+    animation: none;
+  }
+  .btn:hover {
+    transform: none;
+  }
+
+  .decor-blob,
+  .decor-shape {
+    animation: none;
   }
 }

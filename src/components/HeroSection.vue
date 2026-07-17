@@ -1,30 +1,72 @@
 <template>
   <section class="hero">
+    <!-- Decorative elements with subtle motion -->
+    <div class="decor-blob decor-blob--yellow" style="width:380px;height:380px;top:-120px;left:-100px;"></div>
+    <div class="decor-blob decor-blob--cyan" style="width:240px;height:240px;top:30%;right:-60px;"></div>
+    <div class="decor-grid"></div>
+
     <div class="hero-inner">
-      <!-- 左侧文字 -->
+      <!-- Left content with stagger -->
       <div class="hero-content">
-        <span class="hero-overline">个人主页 · 2023 级</span>
-        <h1 class="hero-title">Yue-xin G.</h1>
-        <p class="hero-tagline">
+        <span
+          class="hero-overline"
+          v-motion
+          :initial="{ opacity: 0, y: 24 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 100, ease: 'easeOut', duration: 600 } }"
+        >个人主页 · 2023 级</span>
+
+        <h1
+          class="hero-title"
+          v-motion
+          :initial="{ opacity: 0, y: 32, scale: 0.96 }"
+          :enter="{ opacity: 1, y: 0, scale: 1, transition: { delay: 200, ease: 'easeOut', duration: 700 } }"
+        >Yue-xin G.</h1>
+
+        <p
+          class="hero-tagline"
+          v-motion
+          :initial="{ opacity: 0, y: 24 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 320, ease: 'easeOut', duration: 600 } }"
+        >
           数据科学与大数据技术 · 本科在读<br>
           专注机器学习 × 数据工程 × 可视化
         </p>
 
-        <div class="hero-meta">
+        <div
+          class="hero-meta"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 440, ease: 'easeOut', duration: 500 } }"
+        >
           <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
           <span class="meta-item"><span class="meta-dot"></span>数据科学与大数据技术</span>
         </div>
 
-        <p class="hero-objective">
+        <p
+          class="hero-objective"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 540, ease: 'easeOut', duration: 500 } }"
+        >
           扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践。寻求数据科学、机器学习方向实习与工作机会。
         </p>
 
-        <blockquote class="hero-quote">
+        <blockquote
+          class="hero-quote"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 640, ease: 'easeOut', duration: 500 } }"
+        >
           步履轻踏破浩瀚，铁拳微舒碎苍寰
           <span class="quote-en">Particle or planet — it all shatters with enough force.</span>
         </blockquote>
 
-        <div class="hero-actions">
+        <div
+          class="hero-actions"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 740, ease: 'easeOut', duration: 500 } }"
+        >
           <button class="btn btn-primary" @click="navTo(5)">
             <span>联系我</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -35,8 +77,13 @@
         </div>
       </div>
 
-      <!-- 右侧照片 -->
-      <div class="hero-visual">
+      <!-- Right visual with scale-in -->
+      <div
+        class="hero-visual"
+        v-motion
+        :initial="{ opacity: 0, scale: 0.8, rotate: -3 }"
+        :enter="{ opacity: 1, scale: 1, rotate: 0, transition: { delay: 400, type: 'spring', stiffness: 100, damping: 20 } }"
+      >
         <div class="photo-frame">
           <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" />
         </div>
@@ -51,6 +98,8 @@
       <span>滑动</span>
       <div class="scroll-line"></div>
     </div>
+
+    <div class="section-divider"></div>
   </section>
 </template>
 
@@ -64,8 +113,9 @@ const navTo = inject('navigateTo', () => {})
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 5rem 2rem 3rem;
+  padding: 6rem 2rem 3rem;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-inner {
@@ -74,12 +124,12 @@ const navTo = inject('navigateTo', () => {})
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 4rem;
+  gap: 5rem;
   align-items: start;
   padding-top: 1rem;
+  position: relative;
+  z-index: 1;
 }
-
-/* ---- Left content ---- */
 
 .hero-overline {
   font-family: var(--font-mono);
@@ -128,9 +178,8 @@ const navTo = inject('navigateTo', () => {})
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22c55e;
+  background: var(--accent-mint);
   display: inline-block;
-  box-shadow: 0 0 6px rgba(34, 197, 94, .5);
   flex-shrink: 0;
 }
 
@@ -144,7 +193,6 @@ const navTo = inject('navigateTo', () => {})
   border-radius: 8px;
 }
 
-/* Quote */
 .hero-quote {
   font-size: var(--text-base);
   color: var(--text-secondary);
@@ -170,8 +218,6 @@ const navTo = inject('navigateTo', () => {})
   flex-wrap: wrap;
 }
 
-/* ---- Right visual — rectangular photo ---- */
-
 .hero-visual {
   display: flex;
   flex-direction: column;
@@ -186,7 +232,7 @@ const navTo = inject('navigateTo', () => {})
   border-radius: 20px;
   overflow: hidden;
   border: 2px solid var(--accent-muted);
-  box-shadow: 0 8px 40px rgba(37, 99, 235, .12), 0 2px 12px rgba(0,0,0,.06);
+  box-shadow: 0 8px 40px rgba(232, 168, 56, .12), 0 2px 12px rgba(0,0,0,.06);
 }
 
 .photo-img {
@@ -215,7 +261,6 @@ const navTo = inject('navigateTo', () => {})
   opacity: .6;
 }
 
-/* Scroll hint */
 .scroll-hint {
   position: absolute;
   bottom: 2rem;
@@ -225,6 +270,7 @@ const navTo = inject('navigateTo', () => {})
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  z-index: 1;
 }
 
 .scroll-hint span {
@@ -247,8 +293,6 @@ const navTo = inject('navigateTo', () => {})
   0%, 100% { opacity: .4; transform: scaleY(.6); }
   50% { opacity: 1; transform: scaleY(1); }
 }
-
-/* ---- Mobile ---- */
 
 @media (max-width: 768px) {
   .hero {
@@ -307,5 +351,23 @@ const navTo = inject('navigateTo', () => {})
   .decor-line.short { height: 24px; }
 
   .scroll-hint { display: none; }
+
+  .decor-blob {
+    filter: blur(40px);
+    opacity: 0.2;
+  }
+
+  .decor-blob--yellow {
+    width: 200px !important;
+    height: 200px !important;
+    top: -60px !important;
+    left: -50px !important;
+  }
+
+  .decor-blob--cyan {
+    width: 140px !important;
+    height: 140px !important;
+    right: -30px !important;
+  }
 }
 </style>

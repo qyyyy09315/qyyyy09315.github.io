@@ -11,6 +11,8 @@
   "dependencies": {
     "@fontsource/geist-mono": "^5.2.8",
     "@fontsource/geist-sans": "^5.2.5",
+    "@formkit/auto-animate": "^0.10.0",
+    "@vueuse/motion": "^2.2.6",
     "vue": "^3.4.21"
   },
   "devDependencies": {

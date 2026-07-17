@@ -1,17 +1,28 @@
 <template>
   <section id="projects" class="section">
-    <div class="content">
-      <div class="section-header">
+    <div class="decor-blob decor-blob--mint" style="width:280px;height:280px;top:-60px;left:-80px;"></div>
+    <div class="decor-shape decor-shape--cross" style="bottom:15%;right:6%;"></div>
+
+    <div class="content" style="position:relative;z-index:1;">
+      <div
+        class="section-header"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut' } }"
+      >
         <h2 class="section-title">个人项目</h2>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-grid" v-auto-animate="{ duration: 500, easing: 'ease-out' }">
         <a
           v-for="(p, i) in repos"
           :key="p.name"
           :href="p.url"
           target="_blank"
           class="card project-card"
+          v-motion
+          :initial="{ opacity: 0, y: 30, scale: 0.95 }"
+          :visible-once="{ opacity: 1, y: 0, scale: 1, transition: { delay: 100 + i * 80, duration: 500, ease: 'easeOut' } }"
         >
           <div class="project-head">
             <svg class="project-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.04 5.04 0 0020 4.77 5.06 5.06 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.06 5.06 0 005 4.77a5.04 5.04 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
@@ -23,6 +34,8 @@
         </a>
       </div>
     </div>
+
+    <div class="section-divider"></div>
   </section>
 </template>
 
@@ -67,10 +80,12 @@ const repos = [
   flex-direction: column;
   justify-content: center;
   padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .content {
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 }
@@ -88,6 +103,7 @@ const repos = [
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  position: relative;
 }
 
 .project-card {
@@ -99,11 +115,12 @@ const repos = [
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  transition: transform var(--duration-fast) var(--ease-out);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
 }
 
 .project-head {

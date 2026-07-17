@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { MotionPlugin } from '@vueuse/motion'
 import App from './App.vue'
 
 // Geist fonts
@@ -12,4 +13,6 @@ import '@fontsource/geist-mono/500.css'
 
 import './styles/main.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(MotionPlugin)
+app.mount('#app')

@@ -47,12 +47,11 @@ const scrollTo = (index) => {
   isScrolling.value = true
   currentPage.value = index
   sectionRefs.value[index]?.scrollIntoView({ behavior: 'smooth' })
-  setTimeout(() => { isScrolling.value = false }, 800)
+  setTimeout(() => { isScrolling.value = false }, 100)
 }
 
 provide('navigateTo', scrollTo)
 
-// 修复移动端 100vh 问题
 const setVH = () => {
   const vh = window.innerHeight * 0.01
   document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -138,7 +137,6 @@ onUnmounted(() => {
   scroll-snap-align: start;
 }
 
-/* 移动端：让内容自然扩展，不强制 100vh 锁死 */
 @media (max-width: 768px) {
   .scroll-container {
     height: auto;
@@ -151,7 +149,6 @@ onUnmounted(() => {
     justify-content: flex-start;
   }
 
-  /* Hero 在移动端无需 min-height 限制 */
   .full-page-section:first-child {
     min-height: auto;
   }

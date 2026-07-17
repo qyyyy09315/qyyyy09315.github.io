@@ -1,12 +1,20 @@
 <template>
   <section class="section" id="contact">
-    <div class="content">
-      <div class="section-header">
+    <div class="decor-blob decor-blob--yellow" style="width:280px;height:280px;top:-80px;right:-80px;"></div>
+    <div class="decor-blob decor-blob--coral" style="width:220px;height:220px;bottom:-60px;left:-60px;"></div>
+    <div class="decor-shape decor-shape--ring" style="width:60px;height:60px;top:40%;right:8%;"></div>
+
+    <div class="content" style="position:relative;z-index:1;">
+      <div
+        class="section-header"
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut' } }"
+      >
         <h2 class="section-title">联系</h2>
       </div>
 
-      <!-- 邮箱区：三个邮箱单独展示 -->
-      <div class="emails-list">
+      <div class="emails-list" v-auto-animate="{ duration: 500, easing: 'ease-out' }">
         <div class="email-card">
           <div class="email-header">
             <svg class="email-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -41,20 +49,21 @@
         </div>
       </div>
 
-      <!-- 其他联系方式 -->
       <div class="contact-row">
-        <div class="contact-item">
+        <div class="contact-item" v-motion :initial="{ opacity: 0, x: -20 }" :visible-once="{ opacity: 1, x: 0, transition: { delay: 400, duration: 500, ease: 'easeOut' } }">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.04 5.04 0 0020 4.77 5.06 5.06 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.06 5.06 0 005 4.77a5.04 5.04 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           <span class="contact-label">GitHub</span>
           <a href="https://github.com/qyyyy09315" class="contact-value">github.com/qyyyy09315</a>
         </div>
-        <div class="contact-item">
+        <div class="contact-item" v-motion :initial="{ opacity: 0, x: -20 }" :visible-once="{ opacity: 1, x: 0, transition: { delay: 500, duration: 500, ease: 'easeOut' } }">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span class="contact-label">所在单位</span>
           <span class="contact-value">大连海洋大学 信息工程学院 大数据系</span>
         </div>
       </div>
     </div>
+
+    <div class="section-divider"></div>
   </section>
 </template>
 
@@ -64,10 +73,12 @@
   flex-direction: column;
   justify-content: center;
   padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .content {
-  max-width: 720px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
@@ -83,12 +94,12 @@
   line-height: 1.2;
 }
 
-/* Emails list — stacked, not grid */
 .emails-list {
   display: flex;
   flex-direction: column;
   gap: .75rem;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .email-card {
@@ -138,7 +149,6 @@
   color: var(--text-muted);
 }
 
-/* Contact row */
 .contact-row {
   display: flex;
   gap: 2rem;
@@ -183,5 +193,7 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  .decor-blob { opacity: 0.2; }
 }
 </style>

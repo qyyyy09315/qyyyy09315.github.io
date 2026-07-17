@@ -1,5 +1,5 @@
 <template>
-  <section class="footer">
+  <section class="footer" v-motion :initial="{ opacity: 0 }" :visible-once="{ opacity: 1, transition: { duration: 600 } }">
     <div class="footer-inner">
       <div class="footer-left">
         <h2 class="footer-title">Yue-xin G.</h2>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span class="footer-copyright">&copy; {{ currentYer }} Yue-xin G · 基于 Vue 3 + Vite</span>
+      <span class="footer-copyright">&copy; {{ currentYear }} Yue-xin G · 基于 Vue 3 + Vite</span>
       <div class="footer-links">
         <a href="https://github.com/qyyyy09315">GitHub</a>
         <a href="mailto:gengyuexin@qq.com">邮箱</a>
@@ -37,6 +37,7 @@ const goTo = inject('navigateTo', () => {})
   padding: 4rem 2rem 2rem;
   background: var(--text);
   color: var(--bg);
+  position: relative;
 }
 
 .footer-inner {
