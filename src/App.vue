@@ -54,7 +54,7 @@ const scrollTo = (index) => {
     // Reset scroll lock after animation completes
     setTimeout(() => {
       isScrolling.value = false
-    }, 800)
+    }, 600)
   } else {
     isScrolling.value = false
   }
@@ -92,7 +92,7 @@ const handleWheel = (e) => {
   // Set cooldown to prevent rapid successive scrolls
   wheelTimeout = setTimeout(() => {
     wheelTimeout = null
-  }, 1000)
+  }, 100)
   
   if (e.deltaY > 0) {
     scrollTo(currentPage.value + 1)
