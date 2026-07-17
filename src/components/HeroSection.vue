@@ -13,7 +13,7 @@
         <h1 class="hero-title animate fade-up" style="--delay: 0.3s">Yue-xin G.</h1>
         <p class="hero-tagline animate fade-up" style="--delay: 0.45s">
           数据科学与大数据技术 · 本科在读<br>
-          专注 <span class="text-accent">机器学习</span> × <span class="text-accent">数据工程</span> × <span class="text-accent">可视化</span>
+          专注于 <span class="text-accent">机器学习</span><span class="punct">，</span><span class="text-accent">交叉科学</span><span class="punct">，</span><span class="text-accent">自动化技术</span>
         </p>
         <div class="hero-meta animate fade-up" style="--delay: 0.6s">
           <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
