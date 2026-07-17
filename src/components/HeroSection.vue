@@ -158,13 +158,15 @@ const navTo = inject('navigateTo', () => {})
   padding: 1rem 1.25rem;
   background: var(--bg-subtle);
   border-radius: 10px;
+  text-align: center;
 }
 
 .quote-zh {
-  font-size: var(--text-xl);
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.6;
   display: block;
+  text-align: center;
 }
 
 .quote-en {
@@ -175,6 +177,7 @@ const navTo = inject('navigateTo', () => {})
   margin-top: .375rem;
   letter-spacing: .02em;
   white-space: nowrap;
+  text-align: center;
 }
 
 .hero-actions {

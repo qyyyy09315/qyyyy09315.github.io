@@ -15,7 +15,7 @@
           数据科学与大数据技术专业本科在读，研究方向为
           <span class="highlight-punct"><span class="highlight">机器学习理论</span><span class="punct">、</span></span>
           <span class="highlight-punct"><span class="highlight">深度学习应用</span><span class="punct">、</span></span>
-          <span class="highlight-punct"><span class="highlight">最优化方法</span><span class="punct">。</span></span>
+          <span class="highlight-punct"><span class="highlight">数学建模</span><span class="punct">。</span></span>
         </p>
       </div>
 
