@@ -155,7 +155,7 @@
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), #d4a574);
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
   border-radius: 999px;
 }
 

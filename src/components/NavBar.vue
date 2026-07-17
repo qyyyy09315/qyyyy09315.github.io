@@ -43,9 +43,9 @@ const links = [
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(247, 244, 237, .88);
+  background: rgba(248, 249, 252, .88);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(28,28,28,0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .nav-inner {
