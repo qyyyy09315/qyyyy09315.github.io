@@ -40,15 +40,23 @@ const sections = shallowRef([
 const currentPage = ref(0)
 const sectionRefs = ref([])
 const scrollContainer = ref(null)
+const isScrolling = ref(false)
 
 // Scroll to section using native scrollIntoView with smooth behavior
 const scrollTo = (index) => {
-  if (index < 0 || index >= sections.value.length) return
+  if (index < 0 || index >= sections.value.length || isScrolling.value) return
+  isScrolling.value = true
   currentPage.value = index
   
   const target = sectionRefs.value[index]
   if (target) {
     target.scrollIntoView({ behavior: 'smooth' })
+    // Reset scroll lock after animation completes
+    setTimeout(() => {
+      isScrolling.value = false
+    }, 800)
+  } else {
+    isScrolling.value = false
   }
 }
 
@@ -72,6 +80,27 @@ const handleKey = (e) => {
 
 const isMobile = () => window.innerWidth <= 768
 
+// Wheel scroll navigation - one scroll = one section
+let wheelTimeout = null
+const handleWheel = (e) => {
+  if (isMobile()) return
+  e.preventDefault()
+  
+  if (wheelTimeout) return
+  if (isScrolling.value) return
+  
+  // Set cooldown to prevent rapid successive scrolls
+  wheelTimeout = setTimeout(() => {
+    wheelTimeout = null
+  }, 1000)
+  
+  if (e.deltaY > 0) {
+    scrollTo(currentPage.value + 1)
+  } else if (e.deltaY < 0) {
+    scrollTo(currentPage.value - 1)
+  }
+}
+
 // Touch swipe navigation
 let touchStartY = 0
 const handleTouchStart = (e) => {
@@ -94,6 +123,7 @@ onMounted(() => {
   setVH()
   window.addEventListener('resize', setVH)
   window.addEventListener('orientationchange', setVH)
+  window.addEventListener('wheel', handleWheel, { passive: false })
   window.addEventListener('keydown', handleKey)
   window.addEventListener('touchstart', handleTouchStart, { passive: true })
   window.addEventListener('touchend', handleTouchEnd, { passive: true })
@@ -122,6 +152,7 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', setVH)
   window.removeEventListener('orientationchange', setVH)
+  window.removeEventListener('wheel', handleWheel)
   window.removeEventListener('keydown', handleKey)
   window.removeEventListener('touchstart', handleTouchStart)
   window.removeEventListener('touchend', handleTouchEnd)
@@ -141,6 +172,7 @@ onUnmounted(() => {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 .full-page-section {
@@ -149,6 +181,7 @@ onUnmounted(() => {
   justify-content: center;
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
+  scroll-snap-align: start;
 }
 
 @media (max-width: 768px) {
