@@ -60,7 +60,7 @@
             <div class="skill-bar-row"><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
             <div class="skill-bar-row"><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
             <div class="skill-bar-row"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
-            <div class="skill-bar-row"><span class="skill-name">VS Code</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+            <div class="skill-bar-row"><span class="skill-name">Vibe Coding</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
           </div>
         </div>
       </div>
@@ -142,6 +142,7 @@
   color: var(--text-secondary);
   min-width: 100px;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .skill-bar {
@@ -154,7 +155,7 @@
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  background: linear-gradient(90deg, var(--accent), #d4a574);
   border-radius: 999px;
 }
 
@@ -168,7 +169,7 @@
 
   .skill-card { padding: 1rem; }
 
-  .skill-name { min-width: 70px; font-size: var(--text-xs); }
+  .skill-name { min-width: 70px; font-size: var(--text-xs); white-space: nowrap; }
 
   .skill-bar { height: 5px; }
 }

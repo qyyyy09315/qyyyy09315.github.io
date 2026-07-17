@@ -35,8 +35,8 @@ const goTo = inject('navigateTo', () => {})
   flex-direction: column;
   justify-content: center;
   padding: 4rem 2rem 2rem;
-  background: var(--text);
-  color: var(--bg);
+  background: #2a2520;
+  color: #f7f4ed;
   position: relative;
 }
 
@@ -48,26 +48,26 @@ const goTo = inject('navigateTo', () => {})
   align-items: flex-start;
   justify-content: space-between;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(247, 244, 237, 0.1);
 }
 
 .footer-title {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-sans);
   font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -.02em;
+  font-weight: 700;
+  letter-spacing: -.03em;
   margin-bottom: .5rem;
 }
 
 .footer-tagline {
   font-size: var(--text-base);
-  color: var(--text-muted);
+  color: rgba(247, 244, 237, 0.6);
 }
 
 .footer-back {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: rgba(247, 244, 237, 0.6);
   background: none;
   border: none;
   cursor: pointer;
@@ -93,7 +93,7 @@ const goTo = inject('navigateTo', () => {})
 
 .footer-copyright {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: rgba(247, 244, 237, 0.5);
 }
 
 .footer-links {
@@ -103,7 +103,7 @@ const goTo = inject('navigateTo', () => {})
 
 .footer-links a {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: rgba(247, 244, 237, 0.5);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
 }

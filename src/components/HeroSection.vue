@@ -95,10 +95,10 @@ const navTo = inject('navigateTo', () => {})
 }
 
 .hero-title {
-  font-family: 'Caveat', 'Kalam', 'Brush Script MT', cursive;
+  font-family: var(--font-sans);
   font-size: clamp(3.5rem, 8vw, 6rem);
-  font-weight: 600;
-  letter-spacing: -.02em;
+  font-weight: 700;
+  letter-spacing: -.03em;
   line-height: 1.05;
   margin-bottom: 1.25rem;
   color: var(--text);
@@ -135,7 +135,7 @@ const navTo = inject('navigateTo', () => {})
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-mint);
+  background: var(--accent);
   display: inline-block;
   flex-shrink: 0;
 }
