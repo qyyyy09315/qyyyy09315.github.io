@@ -41,15 +41,41 @@ const currentPage = ref(0)
 const sectionRefs = ref([])
 const scrollContainer = ref(null)
 
-// Scroll to section using native smooth scroll
+// Smooth scroll to section with rAF
 const scrollTo = (index) => {
   if (index < 0 || index >= sections.value.length) return
   currentPage.value = index
   
   const target = sectionRefs.value[index]
   if (target) {
-    target.scrollIntoView({ behavior: 'smooth' })
+    const rect = target.getBoundingClientRect()
+    const targetY = window.scrollY + rect.top
+    smoothScrollTo(targetY, 800)
   }
+}
+
+// Custom rAF smooth scroll (no preventDefault, just smooth animation)
+const smoothScrollTo = (targetY, duration = 800) => {
+  const startY = window.scrollY
+  const distance = targetY - startY
+  if (Math.abs(distance) < 2) return
+  
+  const startTime = performance.now()
+  
+  const animate = (currentTime) => {
+    const elapsed = currentTime - startTime
+    const progress = Math.min(elapsed / duration, 1)
+    // Smooth ease-out cubic
+    const ease = 1 - Math.pow(1 - progress, 3)
+    
+    window.scrollTo(0, startY + distance * ease)
+    
+    if (progress < 1) {
+      requestAnimationFrame(animate)
+    }
+  }
+  
+  requestAnimationFrame(animate)
 }
 
 provide('navigateTo', scrollTo)

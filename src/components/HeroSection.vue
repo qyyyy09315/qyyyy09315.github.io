@@ -9,24 +9,24 @@
     <div class="hero-inner">
       <!-- Left content with stagger -->
       <div class="hero-content">
-        <span class="hero-overline animate fade-up" style="--delay: 0.1s">个人主页 · 2023 级</span>
-        <h1 class="hero-title animate fade-up" style="--delay: 0.2s">Yue-xin G.</h1>
-        <p class="hero-tagline animate fade-up" style="--delay: 0.3s">
+        <span class="hero-overline animate fade-up" style="--delay: 0.15s">个人主页 · 2023 级</span>
+        <h1 class="hero-title animate fade-up" style="--delay: 0.3s">Yue-xin G.</h1>
+        <p class="hero-tagline animate fade-up" style="--delay: 0.45s">
           数据科学与大数据技术 · 本科在读<br>
           专注机器学习 × 数据工程 × 可视化
         </p>
-        <div class="hero-meta animate fade-up" style="--delay: 0.4s">
+        <div class="hero-meta animate fade-up" style="--delay: 0.6s">
           <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
           <span class="meta-item"><span class="meta-dot"></span>数据科学与大数据技术</span>
         </div>
-        <p class="hero-objective animate fade-up" style="--delay: 0.5s">
+        <p class="hero-objective animate fade-up" style="--delay: 0.75s">
           扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践。寻求数据科学、机器学习方向实习与工作机会。
         </p>
-        <blockquote class="hero-quote animate fade-up" style="--delay: 0.6s">
+        <blockquote class="hero-quote animate fade-up" style="--delay: 0.9s">
           步履轻踏破浩瀚，铁拳微舒碎苍寰
           <span class="quote-en">Particle or planet — it all shatters with enough force.</span>
         </blockquote>
-        <div class="hero-actions animate fade-up" style="--delay: 0.7s">
+        <div class="hero-actions animate fade-up" style="--delay: 1.05s">
           <button class="btn btn-primary" @click="navTo(5)">
             <span>联系我</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -36,7 +36,7 @@
       </div>
 
       <!-- Right visual with scale-in -->
-      <div class="hero-visual animate scale-in" style="--delay: 0.4s">
+      <div class="hero-visual animate scale-in" style="--delay: 0.5s">
         <div class="photo-frame">
           <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" loading="lazy" decoding="async" />
         </div>
@@ -246,14 +246,15 @@ const navTo = inject('navigateTo', () => {})
   50% { opacity: 1; transform: scaleY(1); }
 }
 
-/* Pure CSS animation - no JS needed */
+/* Pure CSS animation - smooth & natural */
 .animate {
   opacity: 0;
   animation-fill-mode: both;
-  animation-duration: 0.6s;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-delay: var(--delay, 0s);
 }
+
 
 .animate.visible {
   animation-name: fadeUp;
@@ -270,7 +271,7 @@ const navTo = inject('navigateTo', () => {})
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -281,7 +282,7 @@ const navTo = inject('navigateTo', () => {})
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;

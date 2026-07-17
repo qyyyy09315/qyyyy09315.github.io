@@ -10,7 +10,7 @@
         <h2 class="section-title">关于</h2>
       </div>
 
-      <div class="about-opening animate fade-up" style="--delay: 0.1s">
+      <div class="about-opening animate fade-up" style="--delay: 0.15s">
         <p class="about-lead">
           数据科学与大数据技术专业本科在读，研究方向为<span class="highlight">机器学习理论</span>、<span class="highlight">深度学习应用</span>、<span class="highlight">最优化方法</span>。
         </p>
@@ -19,7 +19,7 @@
       <!-- Two-column layout: Current Focus + Beyond Work -->
       <div class="about-grid">
         <!-- Current Focus -->
-        <div class="about-card focus-card animate fade-left" style="--delay: 0.2s">
+        <div class="about-card focus-card animate fade-left" style="--delay: 0.3s">
           <div class="card-header">
             <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             <h3 class="card-title">当前焦点</h3>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Beyond Work -->
-        <div class="about-card beyond-card animate fade-right" style="--delay: 0.3s">
+        <div class="about-card beyond-card animate fade-right" style="--delay: 0.45s">
           <div class="card-header">
             <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             <h3 class="card-title">工作之外</h3>
@@ -64,7 +64,7 @@
       </div>
 
       <!-- CTA -->
-      <div class="about-cta animate fade-up" style="--delay: 0.4s">
+      <div class="about-cta animate fade-up" style="--delay: 0.6s">
         <button class="btn btn-primary" @click="navTo(5)">
           <span>联系我</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
