@@ -12,7 +12,7 @@
         :initial="{ opacity: 0, y: 35 }"
         :visible-once="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 18 } }"
       >
-        <h2 class="section-title">个人项目</h2>
+        <h2 class="section-title">个人 / 合作项目</h2>
       </div>
 
       <div class="projects-grid" v-auto-animate="{ duration: 500, easing: 'ease-out' }">
