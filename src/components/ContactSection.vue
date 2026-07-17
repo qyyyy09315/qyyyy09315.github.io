@@ -1,13 +1,15 @@
 <template>
   <section class="section" id="contact">
-    <div class="decor-blob decor-blob--yellow" style="width:280px;height:280px;top:-80px;right:-80px;"></div>
-    <div class="decor-blob decor-blob--coral" style="width:220px;height:220px;bottom:-60px;left:-60px;"></div>
-    <div class="decor-shape decor-shape--ring" style="width:60px;height:60px;top:40%;right:8%;"></div>
+    <div class="decor-blob decor-blob--indigo" style="width:340px;height:340px;top:-100px;right:-80px;"></div>
+    <div class="decor-blob decor-blob--rose" style="width:280px;height:280px;bottom:-90px;left:-80px;"></div>
+    <div class="decor-shape decor-shape--ring" style="width:70px;height:70px;top:30%;left:8%;border-color: var(--accent-secondary);"></div>
+    <div class="decor-shape decor-shape--dot" style="top:65%;right:14%;"></div>
+    <div class="decor-shape decor-shape--cross" style="bottom:20%;left:6%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
       <div
-        class="section-header"
         v-motion
+        class="section-header"
         :initial="{ opacity: 0, y: 30 }"
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut' } }"
       >
@@ -74,7 +76,6 @@
   justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  overflow: hidden;
 }
 
 .content {
@@ -153,6 +154,8 @@
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-item {
@@ -194,6 +197,6 @@
     gap: 1rem;
   }
 
-  .decor-blob { opacity: 0.2; }
+  .decor-blob { opacity: 0.25; }
 }
 </style>

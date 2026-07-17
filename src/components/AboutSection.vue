@@ -1,14 +1,16 @@
 <template>
   <section class="section" id="about">
-    <div class="decor-blob decor-blob--coral" style="width:320px;height:320px;bottom:-100px;right:-80px;"></div>
-    <div class="decor-shape decor-shape--ring" style="width:80px;height:80px;top:20%;left:5%;"></div>
+    <!-- Decorative elements - brighter and larger -->
+    <div class="decor-blob decor-blob--rose" style="width:350px;height:350px;bottom:-120px;right:-90px;"></div>
+    <div class="decor-shape decor-shape--ring" style="width:90px;height:90px;top:18%;left:4%;"></div>
+    <div class="decor-shape decor-shape--dot" style="top:65%;left:15%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
       <div
         class="section-header"
         v-motion
-        :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut' } }"
+        :initial="{ opacity: 0, y: 35 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 18 } }"
       >
         <h2 class="section-title">关于</h2>
       </div>
@@ -16,8 +18,8 @@
       <p
         class="about-bio"
         v-motion
-        :initial="{ opacity: 0, y: 24 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { delay: 150, duration: 500, ease: 'easeOut' } }"
+        :initial="{ opacity: 0, y: 28 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
       >
         就读于大连海洋大学，对机器学习和数据科学有浓厚兴趣。专注于将统计方法与软件工程相结合，探索数据驱动的解决方案，热衷于用数据讲故事。
       </p>
@@ -34,7 +36,7 @@
   justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  overflow: hidden;
+  /* 不设置 overflow: hidden，让装饰物可以溢出 */
 }
 
 .content {
@@ -64,6 +66,6 @@
   .section { padding: 3rem 1.25rem; justify-content: flex-start; }
   .section-title { font-size: var(--text-xl); }
   .about-bio { font-size: var(--text-base); }
-  .decor-blob { opacity: 0.2; }
+  .decor-blob { opacity: 0.3; }
 }
 </style>

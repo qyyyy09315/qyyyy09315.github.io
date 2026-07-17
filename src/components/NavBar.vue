@@ -43,7 +43,7 @@ const links = [
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(247, 244, 237, .82);
+  background: rgba(248, 249, 252, .85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
 }

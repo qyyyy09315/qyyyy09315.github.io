@@ -1,7 +1,9 @@
 <template>
   <section class="section" id="education">
-    <div class="decor-blob decor-blob--cyan" style="width:300px;height:300px;bottom:-80px;left:-80px;"></div>
-    <div class="decor-shape decor-shape--dot" style="top:25%;right:10%;"></div>
+    <div class="decor-blob decor-blob--cyan" style="width:320px;height:320px;bottom:-100px;left:-90px;"></div>
+    <div class="decor-blob decor-blob--green" style="width:200px;height:200px;top:-60px;right:-60px;"></div>
+    <div class="decor-shape decor-shape--cross" style="top:55%;right:12%;"></div>
+    <div class="decor-shape decor-shape--dot" style="top:20%;left:18%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
       <div
@@ -51,7 +53,6 @@
   justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  overflow: hidden;
 }
 
 .content {
@@ -117,13 +118,13 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #fefce8, #fef3c7);
-  border: 1px solid #fde68a;
+  background: var(--award-gradient);
+  border: 1px solid var(--award-border);
   border-radius: 10px;
 }
 
 .award-icon {
-  color: #b45309;
+  color: var(--award-icon);
   flex-shrink: 0;
 }
 
@@ -136,13 +137,13 @@
 .award-name {
   font-size: var(--text-base);
   font-weight: 600;
-  color: #92400e;
+  color: var(--award-text);
 }
 
 .award-period {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: #b45309;
+  color: var(--award-icon);
 }
 
 @media (max-width: 768px) {
@@ -158,6 +159,6 @@
     padding: 1rem;
   }
 
-  .decor-blob { opacity: 0.2; }
+  .decor-blob { opacity: 0.25; }
 }
 </style>

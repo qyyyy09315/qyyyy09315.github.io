@@ -1,14 +1,16 @@
 <template>
   <section id="projects" class="section">
-    <div class="decor-blob decor-blob--mint" style="width:280px;height:280px;top:-60px;left:-80px;"></div>
-    <div class="decor-shape decor-shape--cross" style="bottom:15%;right:6%;"></div>
+    <div class="decor-blob decor-blob--cyan" style="width:320px;height:320px;top:-100px;left:-90px;"></div>
+    <div class="decor-blob decor-blob--green" style="width:240px;height:240px;bottom:-80px;right:-80px;"></div>
+    <div class="decor-shape decor-shape--ring" style="width:50px;height:50px;top:35%;left:12%;"></div>
+    <div class="decor-shape decor-shape--dot" style="bottom:20%;right:10%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
       <div
         class="section-header"
         v-motion
-        :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut' } }"
+        :initial="{ opacity: 0, y: 35 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 18 } }"
       >
         <h2 class="section-title">个人项目</h2>
       </div>
@@ -21,8 +23,8 @@
           target="_blank"
           class="card project-card"
           v-motion
-          :initial="{ opacity: 0, y: 30, scale: 0.95 }"
-          :visible-once="{ opacity: 1, y: 0, scale: 1, transition: { delay: 100 + i * 80, duration: 500, ease: 'easeOut' } }"
+          :initial="{ opacity: 0, y: 35, scale: 0.95 }"
+          :visible-once="{ opacity: 1, y: 0, scale: 1, transition: { delay: 150 + i * 80, duration: 500, ease: 'easeOut' } }"
         >
           <div class="project-head">
             <svg class="project-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.04 5.04 0 0020 4.77 5.06 5.06 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.06 5.06 0 005 4.77a5.04 5.04 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
@@ -81,7 +83,6 @@ const repos = [
   justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  overflow: hidden;
 }
 
 .content {

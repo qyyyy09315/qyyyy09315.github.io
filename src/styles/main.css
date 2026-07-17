@@ -1,30 +1,39 @@
 :root {
-  /* === Hum Theme · Warm Playful === */
-  --bg: #f7f4ed;
-  --bg-subtle: #f0ece3;
+  /* === Cold Theme · Tech Minimal === */
+  --bg: #f8f9fc;
+  --bg-subtle: #f0f2f7;
   --bg-elevated: #ffffff;
-  --text: #151515;
-  --text-secondary: #6b6b66;
-  --text-muted: #9c9a92;
+  --text: #1a1d26;
+  --text-secondary: #5a5f6e;
+  --text-muted: #8b909e;
 
-  /* Multi-accent palette */
-  --accent: #e8a838;
-  --accent-dark: #c88a20;
-  --accent-subtle: rgba(232, 168, 56, 0.08);
-  --accent-muted: rgba(232, 168, 56, 0.15);
+  /* Primary accent — electric blue */
+  --accent: #3b82f6;
+  --accent-dark: #2563eb;
+  --accent-subtle: rgba(59, 130, 246, 0.08);
+  --accent-muted: rgba(59, 130, 246, 0.15);
+  --accent-shadow: rgba(59, 130, 246, 0.25);
 
   /* Secondary accents */
-  --accent-cyan: #3b82f6;
-  --accent-coral: #ef6f5e;
-  --accent-mint: #4ade80;
+  --accent-secondary: #6366f1;
+  --accent-cyan: #06b6d4;
+  --accent-rose: #f43f5e;
+  --accent-green: #10b981;
+  --accent-indigo: #8b5cf6;
 
   /* Borders */
-  --border: #e0dbd1;
-  --border-subtle: #ece8df;
+  --border: #e2e5ec;
+  --border-subtle: #eef0f5;
 
   /* Shadows */
-  --shadow-soft: 0 8px 24px -8px rgba(21, 21, 21, 0.08);
-  --shadow-medium: 0 12px 32px -12px rgba(21, 21, 21, 0.10);
+  --shadow-soft: 0 8px 24px -8px rgba(26, 29, 38, 0.08);
+  --shadow-medium: 0 12px 32px -12px rgba(26, 29, 38, 0.10);
+
+  /* Award section (cold theme) */
+  --award-gradient: linear-gradient(135deg, #fefce8, #fef3c7);
+  --award-border: #fde68a;
+  --award-icon: #b45309;
+  --award-text: #92400e;
 
   /* Font */
   --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -116,17 +125,17 @@ body, p, h1, h2, h3, span, div, button, a {
 
 .btn-primary {
   background: var(--accent);
-  color: var(--text);
-  box-shadow: 0 4px 0 0 var(--accent-dark), 0 6px 12px -3px rgba(232, 168, 56, 0.35);
+  color: #fff;
+  box-shadow: 0 4px 0 0 var(--accent-dark), 0 6px 12px -3px var(--accent-shadow);
 }
 .btn-primary:hover {
   background: var(--accent-dark);
-  box-shadow: 0 6px 0 0 var(--accent-dark), 0 12px 22px -4px rgba(232, 168, 56, 0.4);
+  box-shadow: 0 6px 0 0 var(--accent-dark), 0 12px 22px -4px var(--accent-shadow);
   transform: translateY(-2px);
 }
 .btn-primary:active {
   transform: translateY(3px);
-  box-shadow: 0 1px 0 0 var(--accent-dark), 0 2px 6px -2px rgba(232, 168, 56, 0.3);
+  box-shadow: 0 1px 0 0 var(--accent-dark), 0 2px 6px -2px var(--accent-shadow);
   transition-duration: 70ms;
 }
 
@@ -176,26 +185,26 @@ body, p, h1, h2, h3, span, div, button, a {
     --text-2xl: 1.5rem;
   }
 
-  /* 移动端所有 section 顶部对齐，防止内容溢出 */
   .section {
     justify-content: flex-start;
   }
 }
 
-/* ===== Decorative Elements (for motion-enhanced sections) ===== */
+/* ===== Decorative Elements ===== */
 
-/* Floating blob */
+/* Floating blob — brighter colors */
 .decor-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.35;
+  filter: blur(50px);
+  opacity: 0.45;
   pointer-events: none;
   z-index: 0;
   animation: blobFloat 12s ease-in-out infinite;
+  will-change: transform;
 }
 
-.decor-blob--yellow {
+.decor-blob--primary {
   background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
 }
 
@@ -204,14 +213,19 @@ body, p, h1, h2, h3, span, div, button, a {
   animation-delay: -4s;
 }
 
-.decor-blob--coral {
-  background: radial-gradient(circle, var(--accent-coral) 0%, transparent 70%);
+.decor-blob--rose {
+  background: radial-gradient(circle, var(--accent-rose) 0%, transparent 70%);
   animation-delay: -8s;
 }
 
-.decor-blob--mint {
-  background: radial-gradient(circle, var(--accent-mint) 0%, transparent 70%);
+.decor-blob--green {
+  background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
   animation-delay: -2s;
+}
+
+.decor-blob--indigo {
+  background: radial-gradient(circle, var(--accent-indigo) 0%, transparent 70%);
+  animation-delay: -6s;
 }
 
 @keyframes blobFloat {
@@ -226,8 +240,9 @@ body, p, h1, h2, h3, span, div, button, a {
   position: absolute;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
+  opacity: 0.15;
   animation: shapeDrift 18s ease-in-out infinite;
+  will-change: transform;
 }
 
 .decor-shape--ring {
@@ -238,7 +253,7 @@ body, p, h1, h2, h3, span, div, button, a {
 .decor-shape--dot {
   width: 8px;
   height: 8px;
-  background: var(--accent-coral);
+  background: var(--accent-rose);
   border-radius: 50%;
 }
 
@@ -280,13 +295,6 @@ body, p, h1, h2, h3, span, div, button, a {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
   pointer-events: none;
-}
-
-/* Skill bar fill animation on reveal */
-.skill-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-coral));
-  border-radius: 999px;
 }
 
 /* ===== Reduce motion ===== */

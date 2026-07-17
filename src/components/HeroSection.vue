@@ -1,8 +1,9 @@
 <template>
   <section class="hero">
-    <!-- Decorative elements with subtle motion -->
-    <div class="decor-blob decor-blob--yellow" style="width:380px;height:380px;top:-120px;left:-100px;"></div>
-    <div class="decor-blob decor-blob--cyan" style="width:240px;height:240px;top:30%;right:-60px;"></div>
+    <!-- Decorative blobs - positioned outside content flow -->
+    <div class="decor-blob decor-blob--primary" style="width:420px;height:420px;top:-150px;left:-120px;"></div>
+    <div class="decor-blob decor-blob--cyan" style="width:300px;height:300px;top:25%;right:-80px;"></div>
+    <div class="decor-blob decor-blob--accent" style="width:200px;height:200px;bottom:-60px;left:30%;"></div>
     <div class="decor-grid"></div>
 
     <div class="hero-inner">
@@ -11,22 +12,22 @@
         <span
           class="hero-overline"
           v-motion
-          :initial="{ opacity: 0, y: 24 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 100, ease: 'easeOut', duration: 600 } }"
+          :initial="{ opacity: 0, y: 30 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
         >个人主页 · 2023 级</span>
 
         <h1
           class="hero-title"
           v-motion
-          :initial="{ opacity: 0, y: 32, scale: 0.96 }"
-          :enter="{ opacity: 1, y: 0, scale: 1, transition: { delay: 200, ease: 'easeOut', duration: 700 } }"
+          :initial="{ opacity: 0, y: 40, scale: 0.95 }"
+          :visible-once="{ opacity: 1, y: 0, scale: 1, transition: { delay: 250, type: 'spring', stiffness: 80, damping: 18 } }"
         >Yue-xin G.</h1>
 
         <p
           class="hero-tagline"
           v-motion
-          :initial="{ opacity: 0, y: 24 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 320, ease: 'easeOut', duration: 600 } }"
+          :initial="{ opacity: 0, y: 30 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 400, duration: 600, ease: 'easeOut' } }"
         >
           数据科学与大数据技术 · 本科在读<br>
           专注机器学习 × 数据工程 × 可视化
@@ -35,8 +36,8 @@
         <div
           class="hero-meta"
           v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 440, ease: 'easeOut', duration: 500 } }"
+          :initial="{ opacity: 0, y: 25 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 500, duration: 500, ease: 'easeOut' } }"
         >
           <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
           <span class="meta-item"><span class="meta-dot"></span>数据科学与大数据技术</span>
@@ -45,8 +46,8 @@
         <p
           class="hero-objective"
           v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 540, ease: 'easeOut', duration: 500 } }"
+          :initial="{ opacity: 0, y: 25 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 600, duration: 500, ease: 'easeOut' } }"
         >
           扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践。寻求数据科学、机器学习方向实习与工作机会。
         </p>
@@ -54,8 +55,8 @@
         <blockquote
           class="hero-quote"
           v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 640, ease: 'easeOut', duration: 500 } }"
+          :initial="{ opacity: 0, y: 25 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 700, duration: 500, ease: 'easeOut' } }"
         >
           步履轻踏破浩瀚，铁拳微舒碎苍寰
           <span class="quote-en">Particle or planet — it all shatters with enough force.</span>
@@ -64,8 +65,8 @@
         <div
           class="hero-actions"
           v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 740, ease: 'easeOut', duration: 500 } }"
+          :initial="{ opacity: 0, y: 25 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { delay: 800, duration: 500, ease: 'easeOut' } }"
         >
           <button class="btn btn-primary" @click="navTo(5)">
             <span>联系我</span>
@@ -77,12 +78,12 @@
         </div>
       </div>
 
-      <!-- Right visual with scale-in -->
+      <!-- Right visual with spring scale-in -->
       <div
         class="hero-visual"
         v-motion
-        :initial="{ opacity: 0, scale: 0.8, rotate: -3 }"
-        :enter="{ opacity: 1, scale: 1, rotate: 0, transition: { delay: 400, type: 'spring', stiffness: 100, damping: 20 } }"
+        :initial="{ opacity: 0, scale: 0.75, rotate: -5 }"
+        :visible-once="{ opacity: 1, scale: 1, rotate: 0, transition: { delay: 500, type: 'spring', stiffness: 70, damping: 16 } }"
       >
         <div class="photo-frame">
           <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" />
@@ -115,7 +116,7 @@ const navTo = inject('navigateTo', () => {})
   justify-content: flex-start;
   padding: 6rem 2rem 3rem;
   position: relative;
-  overflow: hidden;
+  /* 不设置 overflow: hidden，让装饰物可以溢出显示 */
 }
 
 .hero-inner {
@@ -232,7 +233,7 @@ const navTo = inject('navigateTo', () => {})
   border-radius: 20px;
   overflow: hidden;
   border: 2px solid var(--accent-muted);
-  box-shadow: 0 8px 40px rgba(232, 168, 56, .12), 0 2px 12px rgba(0,0,0,.06);
+  box-shadow: 0 12px 48px -12px var(--accent-shadow), 0 4px 16px rgba(0,0,0,.06);
 }
 
 .photo-img {
@@ -353,21 +354,26 @@ const navTo = inject('navigateTo', () => {})
   .scroll-hint { display: none; }
 
   .decor-blob {
-    filter: blur(40px);
-    opacity: 0.2;
+    filter: blur(50px);
+    opacity: 0.25;
   }
 
-  .decor-blob--yellow {
-    width: 200px !important;
-    height: 200px !important;
-    top: -60px !important;
-    left: -50px !important;
+  .decor-blob--primary {
+    width: 220px !important;
+    height: 220px !important;
+    top: -80px !important;
+    left: -60px !important;
   }
 
   .decor-blob--cyan {
-    width: 140px !important;
-    height: 140px !important;
-    right: -30px !important;
+    width: 160px !important;
+    height: 160px !important;
+    right: -40px !important;
+  }
+
+  .decor-blob--accent {
+    width: 120px !important;
+    height: 120px !important;
   }
 }
 </style>

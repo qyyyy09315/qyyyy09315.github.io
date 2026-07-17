@@ -1,7 +1,8 @@
 <template>
   <section id="skills" class="section">
-    <div class="decor-blob decor-blob--yellow" style="width:260px;height:260px;top:-80px;right:-60px;"></div>
-    <div class="decor-shape decor-shape--dot" style="top:60%;left:8%;"></div>
+    <div class="decor-blob decor-blob--primary" style="width:280px;height:280px;top:-90px;right:-70px;"></div>
+    <div class="decor-blob decor-blob--cyan" style="width:220px;height:220px;bottom:-70px;left:-70px;"></div>
+    <div class="decor-shape decor-shape--cross" style="top:55%;right:8%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
       <div
@@ -14,7 +15,7 @@
       </div>
 
       <div class="skills-grid" v-auto-animate="{ duration: 500, easing: 'ease-out' }">
-        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 28 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 100, duration: 500, ease: 'easeOut' } }">
+        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 35 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 100, duration: 500, ease: 'easeOut' } }">
           <div class="skill-category">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             编程基础
@@ -28,7 +29,7 @@
           </div>
         </div>
 
-        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 28 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 200, duration: 500, ease: 'easeOut' } }">
+        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 35 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 200, duration: 500, ease: 'easeOut' } }">
           <div class="skill-category">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
             机器学习
@@ -42,7 +43,7 @@
           </div>
         </div>
 
-        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 28 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 300, duration: 500, ease: 'easeOut' } }">
+        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 35 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 300, duration: 500, ease: 'easeOut' } }">
           <div class="skill-category">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
             数据分析
@@ -55,7 +56,7 @@
           </div>
         </div>
 
-        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 28 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 400, duration: 500, ease: 'easeOut' } }">
+        <div class="card skill-card" v-motion :initial="{ opacity: 0, y: 35 }" :visible-once="{ opacity: 1, y: 0, transition: { delay: 400, duration: 500, ease: 'easeOut' } }">
           <div class="skill-category">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
             开发工具
@@ -81,7 +82,7 @@
   justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  overflow: hidden;
+  /* 让装饰物可以溢出显示 */
 }
 
 .content {
@@ -159,7 +160,7 @@
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-coral));
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
   border-radius: 999px;
   will-change: width;
 }
