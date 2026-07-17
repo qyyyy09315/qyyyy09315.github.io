@@ -23,7 +23,7 @@
           扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践。寻求数据科学、机器学习方向实习与工作机会。
         </p>
         <blockquote class="hero-quote animate fade-up" style="--delay: 0.9s">
-          步履轻踏破浩瀚，铁拳微舒碎苍寰
+          <span class="quote-zh">步履轻踏破浩瀚，铁拳微舒碎苍寰</span>
           <span class="quote-en">Particle or planet — it all shatters with enough force.</span>
         </blockquote>
         <div class="hero-actions animate fade-up" style="--delay: 1.05s">
@@ -160,6 +160,13 @@ const navTo = inject('navigateTo', () => {})
   border-radius: 10px;
 }
 
+.quote-zh {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.6;
+  display: block;
+}
+
 .quote-en {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
@@ -167,6 +174,7 @@ const navTo = inject('navigateTo', () => {})
   display: block;
   margin-top: .375rem;
   letter-spacing: .02em;
+  white-space: nowrap;
 }
 
 .hero-actions {
