@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <NavBar :current-section="currentPage" @navigate="scrollTo" />
-    <main class="scroll-container">
+    <main class="scroll-container" ref="scrollContainer">
       <section
         v-for="(section, index) in sections"
         :key="section.id"
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { ref, provide, onMounted, onUnmounted, shallowRef } from 'vue'
+import { ref, provide, onMounted, onUnmounted, shallowRef, nextTick } from 'vue'
 
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
@@ -40,14 +40,47 @@ const sections = shallowRef([
 const currentPage = ref(0)
 const isScrolling = ref(false)
 const sectionRefs = ref([])
-const container = ref(null)
+const scrollContainer = ref(null)
+
+// Custom smooth scroll using requestAnimationFrame
+const smoothScrollTo = (targetY, duration = 600) => {
+  const startY = window.scrollY
+  const distance = targetY - startY
+  const startTime = performance.now()
+
+  const animate = (currentTime) => {
+    const elapsed = currentTime - startTime
+    const progress = Math.min(elapsed / duration, 1)
+    // Ease out cubic
+    const ease = 1 - Math.pow(1 - progress, 3)
+    
+    window.scrollTo(0, startY + distance * ease)
+    
+    if (progress < 1) {
+      requestAnimationFrame(animate)
+    } else {
+      isScrolling.value = false
+    }
+  }
+
+  requestAnimationFrame(animate)
+}
 
 const scrollTo = (index) => {
   if (index < 0 || index >= sections.value.length || isScrolling.value) return
   isScrolling.value = true
   currentPage.value = index
-  sectionRefs.value[index]?.scrollIntoView({ behavior: 'smooth' })
-  setTimeout(() => { isScrolling.value = false }, 100)
+  
+  nextTick(() => {
+    const target = sectionRefs.value[index]
+    if (target) {
+      const rect = target.getBoundingClientRect()
+      const targetY = window.scrollY + rect.top
+      smoothScrollTo(targetY, 600)
+    } else {
+      isScrolling.value = false
+    }
+  })
 }
 
 provide('navigateTo', scrollTo)
@@ -57,13 +90,20 @@ const setVH = () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
+// Throttled wheel handler
+let wheelTimeout = null
 const handleWheel = (e) => {
   if (isMobile()) return
-  if (isScrolling.value) {
-    e.preventDefault()
-    return
-  }
   e.preventDefault()
+  
+  if (wheelTimeout) return
+  
+  wheelTimeout = setTimeout(() => {
+    wheelTimeout = null
+  }, 800)
+  
+  if (isScrolling.value) return
+  
   if (e.deltaY > 0) {
     scrollTo(currentPage.value + 1)
   } else if (e.deltaY < 0) {
@@ -98,6 +138,9 @@ const handleTouchEnd = (e) => {
   }
 }
 
+// IntersectionObserver to trigger CSS animations
+let animationObserver = null
+
 onMounted(() => {
   setVH()
   window.addEventListener('resize', setVH)
@@ -106,6 +149,26 @@ onMounted(() => {
   window.addEventListener('keydown', handleKey)
   window.addEventListener('touchstart', handleTouchStart, { passive: true })
   window.addEventListener('touchend', handleTouchEnd, { passive: true })
+
+  // Single IntersectionObserver for all .animate elements
+  animationObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          animationObserver.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  )
+
+  // Observe all .animate elements after DOM is ready
+  nextTick(() => {
+    document.querySelectorAll('.animate').forEach((el) => {
+      animationObserver.observe(el)
+    })
+  })
 })
 
 onUnmounted(() => {
@@ -115,6 +178,7 @@ onUnmounted(() => {
   window.removeEventListener('keydown', handleKey)
   window.removeEventListener('touchstart', handleTouchStart)
   window.removeEventListener('touchend', handleTouchEnd)
+  if (animationObserver) animationObserver.disconnect()
 })
 </script>
 
@@ -126,6 +190,12 @@ onUnmounted(() => {
 
 .scroll-container {
   width: 100%;
+  /* CSS scroll snap - GPU accelerated */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .full-page-section {
@@ -135,12 +205,17 @@ onUnmounted(() => {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
   scroll-snap-align: start;
+  /* GPU acceleration for sections */
+  will-change: transform;
+  contain: layout style paint;
 }
 
 @media (max-width: 768px) {
   .scroll-container {
     height: auto;
     overflow: visible;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
   }
 
   .full-page-section {

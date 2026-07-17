@@ -6,23 +6,18 @@
     <div class="decor-shape decor-shape--dot" style="top:20%;left:18%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
-      <div
-        class="section-header"
-        v-motion
-        :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, ease: 'easeOut' } }"
-      >
+      <div class="section-header animate fade-up">
         <h2 class="section-title">教育与荣誉</h2>
       </div>
 
       <div class="edu-timeline">
-        <div class="edu-card">
+        <div class="edu-card animate fade-up" style="--delay: 0.1s">
           <div class="edu-year">2023 — 2027</div>
           <h3 class="edu-school">大连海洋大学</h3>
           <p class="edu-major">数据科学与大数据技术 · 本科在读</p>
         </div>
 
-        <div class="edu-card">
+        <div class="edu-card animate fade-up" style="--delay: 0.2s">
           <div class="edu-year">2020 — 2023</div>
           <h3 class="edu-school">大连市第二十三高级中学</h3>
           <p class="edu-major">高中</p>
@@ -30,7 +25,7 @@
       </div>
 
       <div class="awards-block">
-        <div class="award-item" v-motion :initial="{ opacity: 0, scale: 0.9 }" :visible-once="{ opacity: 1, scale: 1, transition: { delay: 200, duration: 400, ease: 'easeOut' } }">
+        <div class="award-item animate scale-in" style="--delay: 0.3s">
           <div class="award-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
           </div>

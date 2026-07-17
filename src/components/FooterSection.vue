@@ -1,5 +1,5 @@
 <template>
-  <section class="footer" v-motion :initial="{ opacity: 0 }" :visible-once="{ opacity: 1, transition: { duration: 600 } }">
+  <section class="footer animate fade-in">
     <div class="footer-inner">
       <div class="footer-left">
         <h2 class="footer-title">Yue-xin G.</h2>

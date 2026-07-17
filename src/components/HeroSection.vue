@@ -9,82 +9,34 @@
     <div class="hero-inner">
       <!-- Left content with stagger -->
       <div class="hero-content">
-        <span
-          class="hero-overline"
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
-        >个人主页 · 2023 级</span>
-
-        <h1
-          class="hero-title"
-          v-motion
-          :initial="{ opacity: 0, y: 40, scale: 0.95 }"
-          :visible-once="{ opacity: 1, y: 0, scale: 1, transition: { delay: 250, type: 'spring', stiffness: 80, damping: 18 } }"
-        >Yue-xin G.</h1>
-
-        <p
-          class="hero-tagline"
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 400, duration: 600, ease: 'easeOut' } }"
-        >
+        <span class="hero-overline animate fade-up" style="--delay: 0.1s">个人主页 · 2023 级</span>
+        <h1 class="hero-title animate fade-up" style="--delay: 0.2s">Yue-xin G.</h1>
+        <p class="hero-tagline animate fade-up" style="--delay: 0.3s">
           数据科学与大数据技术 · 本科在读<br>
           专注机器学习 × 数据工程 × 可视化
         </p>
-
-        <div
-          class="hero-meta"
-          v-motion
-          :initial="{ opacity: 0, y: 25 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 500, duration: 500, ease: 'easeOut' } }"
-        >
+        <div class="hero-meta animate fade-up" style="--delay: 0.4s">
           <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
           <span class="meta-item"><span class="meta-dot"></span>数据科学与大数据技术</span>
         </div>
-
-        <p
-          class="hero-objective"
-          v-motion
-          :initial="{ opacity: 0, y: 25 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 600, duration: 500, ease: 'easeOut' } }"
-        >
+        <p class="hero-objective animate fade-up" style="--delay: 0.5s">
           扎实的 Python / SQL 编程能力，对数据建模、统计分析和可视化有系统实践。寻求数据科学、机器学习方向实习与工作机会。
         </p>
-
-        <blockquote
-          class="hero-quote"
-          v-motion
-          :initial="{ opacity: 0, y: 25 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 700, duration: 500, ease: 'easeOut' } }"
-        >
+        <blockquote class="hero-quote animate fade-up" style="--delay: 0.6s">
           步履轻踏破浩瀚，铁拳微舒碎苍寰
           <span class="quote-en">Particle or planet — it all shatters with enough force.</span>
         </blockquote>
-
-        <div
-          class="hero-actions"
-          v-motion
-          :initial="{ opacity: 0, y: 25 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 800, duration: 500, ease: 'easeOut' } }"
-        >
+        <div class="hero-actions animate fade-up" style="--delay: 0.7s">
           <button class="btn btn-primary" @click="navTo(5)">
             <span>联系我</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </button>
-          <button class="btn btn-secondary" @click="navTo(2)">
-            查看技能
-          </button>
+          <button class="btn btn-secondary" @click="navTo(2)">查看技能</button>
         </div>
       </div>
 
-      <!-- Right visual with spring scale-in -->
-      <div
-        class="hero-visual"
-        v-motion
-        :initial="{ opacity: 0, scale: 0.75, rotate: -5 }"
-        :visible-once="{ opacity: 1, scale: 1, rotate: 0, transition: { delay: 500, type: 'spring', stiffness: 70, damping: 16 } }"
-      >
+      <!-- Right visual with scale-in -->
+      <div class="hero-visual animate scale-in" style="--delay: 0.4s">
         <div class="photo-frame">
           <img src="../assets/avatar.jpg" alt="Yue-xin G. 证件照" class="photo-img" loading="lazy" decoding="async" />
         </div>
@@ -116,7 +68,6 @@ const navTo = inject('navigateTo', () => {})
   justify-content: flex-start;
   padding: 6rem 2rem 3rem;
   position: relative;
-  /* 不设置 overflow: hidden，让装饰物可以溢出显示 */
 }
 
 .hero-inner {
@@ -295,6 +246,49 @@ const navTo = inject('navigateTo', () => {})
   50% { opacity: 1; transform: scaleY(1); }
 }
 
+/* Pure CSS animation - no JS needed */
+.animate {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-delay: var(--delay, 0s);
+}
+
+.animate.visible {
+  animation-name: fadeUp;
+}
+
+.fade-up.visible {
+  animation-name: fadeUp;
+}
+
+.scale-in.visible {
+  animation-name: scaleIn;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 4.5rem 1.25rem 2rem;
@@ -311,9 +305,7 @@ const navTo = inject('navigateTo', () => {})
     font-size: clamp(2.75rem, 11vw, 4.5rem);
   }
 
-  .hero-tagline {
-    font-size: var(--text-base);
-  }
+  .hero-tagline { font-size: var(--text-base); }
 
   .hero-meta {
     justify-content: center;
@@ -334,13 +326,8 @@ const navTo = inject('navigateTo', () => {})
     margin-bottom: 1.25rem;
   }
 
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-visual {
-    order: -1;
-  }
+  .hero-actions { justify-content: center; }
+  .hero-visual { order: -1; }
 
   .photo-frame {
     width: 180px;

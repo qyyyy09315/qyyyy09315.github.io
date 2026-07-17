@@ -5,12 +5,7 @@
     <div class="decor-shape decor-shape--cross" style="top:55%;right:8%;"></div>
 
     <div class="content" style="position:relative;z-index:1;">
-      <div
-        class="section-header"
-        v-motion
-        :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, ease: 'easeOut' } }"
-      >
+      <div class="section-header animate fade-up">
         <h2 class="section-title">技能</h2>
       </div>
 
