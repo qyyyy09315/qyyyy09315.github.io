@@ -13,9 +13,9 @@
       <div class="about-opening animate fade-up" style="--delay: 0.15s">
         <p class="about-lead">
           数据科学与大数据技术专业本科在读，研究方向为
-          <span class="highlight">机器学习理论</span><span class="punct">、</span>
-          <span class="highlight">深度学习应用</span><span class="punct">、</span>
-          <span class="highlight">最优化方法</span><span class="punct">。</span>
+          <span class="highlight-punct"><span class="highlight">机器学习理论</span><span class="punct">、</span></span>
+          <span class="highlight-punct"><span class="highlight">深度学习应用</span><span class="punct">、</span></span>
+          <span class="highlight-punct"><span class="highlight">最优化方法</span><span class="punct">。</span></span>
         </p>
       </div>
 

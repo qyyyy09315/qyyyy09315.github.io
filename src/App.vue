@@ -41,41 +41,15 @@ const currentPage = ref(0)
 const sectionRefs = ref([])
 const scrollContainer = ref(null)
 
-// Smooth scroll to section with rAF
+// Scroll to section using native scrollIntoView with smooth behavior
 const scrollTo = (index) => {
   if (index < 0 || index >= sections.value.length) return
   currentPage.value = index
   
   const target = sectionRefs.value[index]
   if (target) {
-    const rect = target.getBoundingClientRect()
-    const targetY = window.scrollY + rect.top
-    smoothScrollTo(targetY, 800)
+    target.scrollIntoView({ behavior: 'smooth' })
   }
-}
-
-// Custom rAF smooth scroll (no preventDefault, just smooth animation)
-const smoothScrollTo = (targetY, duration = 800) => {
-  const startY = window.scrollY
-  const distance = targetY - startY
-  if (Math.abs(distance) < 2) return
-  
-  const startTime = performance.now()
-  
-  const animate = (currentTime) => {
-    const elapsed = currentTime - startTime
-    const progress = Math.min(elapsed / duration, 1)
-    // Smooth ease-out cubic
-    const ease = 1 - Math.pow(1 - progress, 3)
-    
-    window.scrollTo(0, startY + distance * ease)
-    
-    if (progress < 1) {
-      requestAnimationFrame(animate)
-    }
-  }
-  
-  requestAnimationFrame(animate)
 }
 
 provide('navigateTo', scrollTo)
@@ -163,11 +137,10 @@ onUnmounted(() => {
 
 .scroll-container {
   width: 100%;
-  /* CSS scroll snap for section-by-section scrolling */
-  scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  scroll-behavior: smooth;
 }
 
 .full-page-section {
@@ -176,7 +149,6 @@ onUnmounted(() => {
   justify-content: center;
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
-  scroll-snap-align: start;
 }
 
 @media (max-width: 768px) {
