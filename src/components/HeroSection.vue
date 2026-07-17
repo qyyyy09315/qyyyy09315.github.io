@@ -13,7 +13,7 @@
         <h1 class="hero-title animate fade-up" style="--delay: 0.3s">Yue-xin G.</h1>
         <p class="hero-tagline animate fade-up" style="--delay: 0.45s">
           数据科学与大数据技术 · 本科在读<br>
-          专注机器学习 × 数据工程 × 可视化
+          专注 <span class="text-accent">机器学习</span> × <span class="text-accent">数据工程</span> × <span class="text-accent">可视化</span>
         </p>
         <div class="hero-meta animate fade-up" style="--delay: 0.6s">
           <span class="meta-item"><span class="meta-dot"></span>辽宁大连</span>
@@ -109,6 +109,11 @@ const navTo = inject('navigateTo', () => {})
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 1.25rem;
+}
+
+.text-accent {
+  color: var(--accent);
+  font-weight: 500;
 }
 
 .hero-meta {

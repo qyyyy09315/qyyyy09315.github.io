@@ -77,13 +77,54 @@ body {
   overflow: hidden;
 }
 
-/* 防止单个字换一行 */
+/* 中文排版优化 */
 body, p, h1, h2, h3, span, div, button, a {
   word-break: normal;
   overflow-wrap: break-word;
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  /* 更好的中文字体渲染 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 中文标点悬挂：避免行首出现标点 */
+p {
+  hanging-punctuation: allow-end;
+  text-indent: 0;
+}
+
+/* 标点符号不独行，与前面文字绑定 */
+.punct {
+  display: inline-block;
+  text-indent: 0;
+  margin-left: -0.05em;
+  padding-right: 0.05em;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+  white-space: nowrap;
+}
+
+/* 优化中文行高和段落间距 */
+p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* 中文标题优化 */
+h1, h2, h3 {
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+/* 优化长文本阅读体验 */
+.about-lead,
+.hero-objective,
+.hero-quote,
+.project-desc {
+  line-height: 1.85;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 
 /* 桌面端：占满一屏 */

@@ -12,7 +12,10 @@
 
       <div class="about-opening animate fade-up" style="--delay: 0.15s">
         <p class="about-lead">
-          数据科学与大数据技术专业本科在读，研究方向为<span class="highlight">机器学习理论</span>、<span class="highlight">深度学习应用</span>、<span class="highlight">最优化方法</span>。
+          数据科学与大数据技术专业本科在读，研究方向为
+          <span class="highlight">机器学习理论</span><span class="punct">、</span>
+          <span class="highlight">深度学习应用</span><span class="punct">、</span>
+          <span class="highlight">最优化方法</span><span class="punct">。</span>
         </p>
       </div>
 
@@ -130,6 +133,14 @@ const navTo = inject('navigateTo', () => {})
   background: var(--accent-subtle);
   border-radius: 2px;
   z-index: -1;
+}
+
+/* 中文标点悬挂：避免行首出现标点符号 */
+.punct {
+  display: inline-block;
+  text-indent: 0;
+  margin-left: -0.05em;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 
 .about-grid {
